@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+    <record id="warehouse_0001" model="stock.warehouse">
+        <field name="name">Kantor Pusat</field>
+        <field name="code">0001</field>
+    </record>
+
+    <record id="warehouse_010" model="stock.warehouse">
+        <field name="name">Cabang Maros</field>
+        <field name="code">010</field>
+    </record>
+
+    <record id="warehouse_013" model="stock.warehouse">
+        <field name="name">Kantor Kas RSUD Salewangan</field>
+        <field name="code">013</field>
+    </record>
+
+    <record id="warehouse_014" model="stock.warehouse">
+        <field name="name">Kantor Kas Camba</field>
+        <field name="code">014</field>
+    </record>
+
+    <record id="warehouse_015" model="stock.warehouse">
+        <field name="name">Kantor Kas Bantimurung</field>
+        <field name="code">015</field>
+    </record>
+
+    <record id="warehouse_011" model="stock.warehouse">
+        <field name="name">Cabang Pangkep</field>
+        <field name="code">011</field>
+    </record>
+
+    <record id="warehouse_012" model="stock.warehouse">
+        <field name="name">Kantor Kas Sigeri</field>
+        <field name="code">012</field>
+    </record>
+
+    <record id="warehouse_020" model="stock.warehouse">
+        <field name="name">Cabang Jeneponto</field>
+        <field name="code">020</field>
+    </record>
+
+    <record id="warehouse_022" model="stock.warehouse">
+        <field name="name">Kantor Kas Bangkala</field>
+        <field name="code">022</field>
+    </record>
+
+    <record id="warehouse_021" model="stock.warehouse">
+        <field name="name">Cabang Takalar</field>
+        <field name="code">021</field>
+    </record>
+
+    <record id="warehouse_023" model="stock.warehouse">
+        <field name="name">Kantor Kas Galesong</field>
+        <field name="code">023</field>
+    </record>
+
+    <record id="warehouse_024" model="stock.warehouse">
+        <field name="name">Kantor Kas Polongbangkeng</field>
+        <field name="code">024</field>
+    </record>
+
+    <record id="warehouse_030" model="stock.warehouse">
+        <field name="name">Cabang Parepare</field>
+        <field name="code">030</field>
+    </record>
+
+    <record id="warehouse_032" model="stock.warehouse">
+        <field name="name">Kantor Kas RSU A. Makkasau</field>
+        <field name="code">032</field>
+    </record>
+
+    <record id="warehouse_031" model="stock.warehouse">
+        <field name="name">Cabang Barru</field>
+        <field name="code">031</field>
+    </record>
+
+    <record id="warehouse_033" model="stock.warehouse">
+        <field name="name">Kantor Kas Soppeng Riaja</field>
+        <field name="code">033</field>
+    </record>
+
+    <record id="warehouse_034" model="stock.warehouse">
+        <field name="name">Kantor Kas Pekkae</field>
+        <field name="code">034</field>
+    </record>
+
+    <record id="warehouse_035" model="stock.warehouse">
+        <field name="name">Kantor Kas Ralia</field>
+        <field name="code">035</field>
+    </record>
+
+    <record id="warehouse_040" model="stock.warehouse">
+        <field name="name">Cabang Utama Bulukumba</field>
+        <field name="code">040</field>
+    </record>
+
+    <record id="warehouse_045" model="stock.warehouse">
+        <field name="name">Kantor Kas Lanto Dg. Pasewang</field>
+        <field name="code">045</field>
+    </record>
+
+    <record id="warehouse_046" model="stock.warehouse">
+        <field name="name">Kantor Kas Kajang</field>
+        <field name="code">046</field>
+    </record>
+
+    <record id="warehouse_047" model="stock.warehouse">
+        <field name="name">Kantor Kas Tanete</field>
+        <field name="code">047</field>
+    </record>
+
+    <record id="warehouse_048" model="stock.warehouse">
+        <field name="name">Kantor Kas Bonto Bahari </field>
+        <field name="code">048</field>
+    </record>
+
+    <record id="warehouse_041" model="stock.warehouse">
+        <field name="name">Cabang Bantaeng</field>
+        <field name="code">041</field>
+    </record>
+
+    <record id="warehouse_043" model="stock.warehouse">
+        <field name="name">Kantor Kas Banyorang</field>
+        <field name="code">043</field>
+    </record>
+
+    <record id="warehouse_042" model="stock.warehouse">
+        <field name="name">Cabang Selayar</field>
+        <field name="code">042</field>
+    </record>
+
+    <record id="warehouse_044" model="stock.warehouse">
+        <field name="name">Kantor Kas Bupati Selayar</field>
+        <field name="code">044</field>
+    </record>
+
+    <record id="warehouse_050" model="stock.warehouse">
+        <field name="name">Cabang Pinrang</field>
+        <field name="code">050</field>
+    </record>
+
+    <record id="warehouse_051" model="stock.warehouse">
+        <field name="name">Kantor Kas Terminal Pinrang</field>
+        <field name="code">051</field>
+    </record>
+
+    <record id="warehouse_052" model="stock.warehouse">
+        <field name="name">Kantor Kas PPK AD Pinrang</field>
+        <field name="code">052</field>
+    </record>
+
+    <record id="warehouse_060" model="stock.warehouse">
+        <field name="name">Cabang SInjai </field>
+        <field name="code">060</field>
+    </record>
+
+    <record id="warehouse_061" model="stock.warehouse">
+        <field name="name">Kantor Kas Bikeru</field>
+        <field name="code">061</field>
+    </record>
+
+    <record id="warehouse_062" model="stock.warehouse">
+        <field name="name">Kantor Kas KPTSP Sinjai</field>
+        <field name="code">062</field>
+    </record>
+
+    <record id="warehouse_070" model="stock.warehouse">
+        <field name="name">Cabang Polman</field>
+        <field name="code">070</field>
+    </record>
+
+    <record id="warehouse_073" model="stock.warehouse">
+        <field name="name">Kantor Kas Wonomulyo</field>
+        <field name="code">073</field>
+    </record>
+
+    <record id="warehouse_071" model="stock.warehouse">
+        <field name="name">Cabang Utama Mamuju</field>
+        <field name="code">071</field>
+    </record>
+
+    <record id="warehouse_079" model="stock.warehouse">
+        <field name="name">Kantor Kas Kalukku</field>
+        <field name="code">079</field>
+    </record>
+
+    <record id="warehouse_072" model="stock.warehouse">
+        <field name="name">Cabang Majene</field>
+        <field name="code">072</field>
+    </record>
+
+    <record id="warehouse_076" model="stock.warehouse">
+        <field name="name">Kantor Kas Tinambung</field>
+        <field name="code">076</field>
+    </record>
+
+    <record id="warehouse_078" model="stock.warehouse">
+        <field name="name">Kantor Kas Malunda</field>
+        <field name="code">078</field>
+    </record>
+
+    <record id="warehouse_074" model="stock.warehouse">
+        <field name="name">Cabang Mamasa</field>
+        <field name="code">074</field>
+    </record>
+
+    <record id="warehouse_075" model="stock.warehouse">
+        <field name="name">Cabang Pasangkayu</field>
+        <field name="code">075</field>
+    </record>
+
+    <record id="warehouse_077" model="stock.warehouse">
+        <field name="name">Cabang Topoyo</field>
+        <field name="code">077</field>
+    </record>
+
+    <record id="warehouse_080" model="stock.warehouse">
+        <field name="name">Cabang Utama Bone</field>
+        <field name="code">080</field>
+    </record>
+
+    <record id="warehouse_081" model="stock.warehouse">
+        <field name="name">Kantor Kas Mare</field>
+        <field name="code">081</field>
+    </record>
+
+    <record id="warehouse_082" model="stock.warehouse">
+        <field name="name">Kantor Kas Uloe</field>
+        <field name="code">082</field>
+    </record>
+
+    <record id="warehouse_088" model="stock.warehouse">
+        <field name="name">Cabang Pembantu Kahu</field>
+        <field name="code">088</field>
+    </record>
+
+    <record id="warehouse_090" model="stock.warehouse">
+        <field name="name">Cabang Utama Palopo</field>
+        <field name="code">090</field>
+    </record>
+
+    <record id="warehouse_098" model="stock.warehouse">
+        <field name="name">Kantor Kas RSU Sawerigading</field>
+        <field name="code">098</field>
+    </record>
+
+    <record id="warehouse_099" model="stock.warehouse">
+        <field name="name">Kantor Kas KPTSP Palopo</field>
+        <field name="code">099</field>
+    </record>
+
+    <record id="warehouse_091" model="stock.warehouse">
+        <field name="name">Cabang Masamba</field>
+        <field name="code">091</field>
+    </record>
+
+    <record id="warehouse_092" model="stock.warehouse">
+        <field name="name">Cabang Belopa</field>
+        <field name="code">092</field>
+    </record>
+
+    <record id="warehouse_094" model="stock.warehouse">
+        <field name="name">Kantor Kas Walenrang</field>
+        <field name="code">094</field>
+    </record>
+
+    <record id="warehouse_097" model="stock.warehouse">
+        <field name="name">Kantor Kas Padang Sappa</field>
+        <field name="code">097</field>
+    </record>
+
+    <record id="warehouse_093" model="stock.warehouse">
+        <field name="name">Cabang Malili</field>
+        <field name="code">093</field>
+    </record>
+
+    <record id="warehouse_095" model="stock.warehouse">
+        <field name="name">Kantor Kas Tomini</field>
+        <field name="code">095</field>
+    </record>
+
+    <record id="warehouse_096" model="stock.warehouse">
+        <field name="name">Kantor Kas Sorowako</field>
+        <field name="code">096</field>
+    </record>
+
+    <record id="warehouse_100" model="stock.warehouse">
+        <field name="name">Cabang Sengkang</field>
+        <field name="code">100</field>
+    </record>
+
+    <record id="warehouse_104" model="stock.warehouse">
+        <field name="name">Kantor Kas Atapange</field>
+        <field name="code">104</field>
+    </record>
+
+    <record id="warehouse_101" model="stock.warehouse">
+        <field name="name">Cabang Soppeng</field>
+        <field name="code">101</field>
+    </record>
+
+    <record id="warehouse_103" model="stock.warehouse">
+        <field name="name">Kantor Kas Cabenge</field>
+        <field name="code">103</field>
+    </record>
+
+    <record id="warehouse_105" model="stock.warehouse">
+        <field name="name">Kantor Kas Takalala</field>
+        <field name="code">105</field>
+    </record>
+
+    <record id="warehouse_102" model="stock.warehouse">
+        <field name="name">Cabang Pembantu Siwa</field>
+        <field name="code">102</field>
+    </record>
+
+    <record id="warehouse_110" model="stock.warehouse">
+        <field name="name">Cabang Makale</field>
+        <field name="code">110</field>
+    </record>
+
+    <record id="warehouse_111" model="stock.warehouse">
+        <field name="name">Cabang Rantepao</field>
+        <field name="code">111</field>
+    </record>
+
+    <record id="warehouse_120" model="stock.warehouse">
+        <field name="name">Cabang Sidrap</field>
+        <field name="code">120</field>
+    </record>
+
+    <record id="warehouse_122" model="stock.warehouse">
+        <field name="name">Kantor Kas Tanru Tedong</field>
+        <field name="code">122</field>
+    </record>
+
+    <record id="warehouse_124" model="stock.warehouse">
+        <field name="name">Kantor Kas Rappang</field>
+        <field name="code">124</field>
+    </record>
+
+    <record id="warehouse_125" model="stock.warehouse">
+        <field name="name">Kantor Kas Amparita</field>
+        <field name="code">125</field>
+    </record>
+
+    <record id="warehouse_121" model="stock.warehouse">
+        <field name="name">Cabang Enrekang</field>
+        <field name="code">121</field>
+    </record>
+
+    <record id="warehouse_123" model="stock.warehouse">
+        <field name="name">Kantor Kas Alla</field>
+        <field name="code">123</field>
+    </record>
+
+    <record id="warehouse_126" model="stock.warehouse">
+        <field name="name">Kantor Kas Baraka</field>
+        <field name="code">126</field>
+    </record>
+
+    <record id="warehouse_130" model="stock.warehouse">
+        <field name="name">Cabang Utama Makassar</field>
+        <field name="code">130</field>
+    </record>
+
+    <record id="warehouse_132" model="stock.warehouse">
+        <field name="name">Kantor Kas Dispenda</field>
+        <field name="code">132</field>
+    </record>
+
+    <record id="warehouse_133" model="stock.warehouse">
+        <field name="name">Kantor Kas Gubernur</field>
+        <field name="code">133</field>
+    </record>
+
+    <record id="warehouse_134" model="stock.warehouse">
+        <field name="name">Kantor Kas Maccini</field>
+        <field name="code">134</field>
+    </record>
+
+    <record id="warehouse_135" model="stock.warehouse">
+        <field name="name">Kantor Kas PU</field>
+        <field name="code">135</field>
+    </record>
+
+    <record id="warehouse_136" model="stock.warehouse">
+        <field name="name">Kantor Kas Diknas</field>
+        <field name="code">136</field>
+    </record>
+
+    <record id="warehouse_137" model="stock.warehouse">
+        <field name="name">Kantor Kas Labuang Baji</field>
+        <field name="code">137</field>
+    </record>
+
+    <record id="warehouse_139" model="stock.warehouse">
+        <field name="name">Kantor Kas Antang</field>
+        <field name="code">139</field>
+    </record>
+
+    <record id="warehouse_140" model="stock.warehouse">
+        <field name="name">Kantor Kas Talasalapang</field>
+        <field name="code">140</field>
+    </record>
+
+    <record id="warehouse_141" model="stock.warehouse">
+        <field name="name">Kantor Kas IPDN</field>
+        <field name="code">141</field>
+    </record>
+
+    <record id="warehouse_142" model="stock.warehouse">
+        <field name="name">Kantor Kas RS Haji</field>
+        <field name="code">142</field>
+    </record>
+
+    <record id="warehouse_143" model="stock.warehouse">
+        <field name="name">Kantor Kas DPRD</field>
+        <field name="code">143</field>
+    </record>
+
+    <record id="warehouse_144" model="stock.warehouse">
+        <field name="name">Kantor Kas BKPMD</field>
+        <field name="code">144</field>
+    </record>
+
+    <record id="warehouse_145" model="stock.warehouse">
+        <field name="name">Kantor Kas Dipenda Provinsi</field>
+        <field name="code">145</field>
+    </record>
+
+    <record id="warehouse_146" model="stock.warehouse">
+        <field name="name">Kantor Kas Balaikota Makassar</field>
+        <field name="code">146</field>
+    </record>
+
+    <record id="warehouse_131" model="stock.warehouse">
+        <field name="name">Cabang Gowa</field>
+        <field name="code">131</field>
+    </record>
+
+    <record id="warehouse_150" model="stock.warehouse">
+        <field name="name">Kantor Kas Bajeng</field>
+        <field name="code">150</field>
+    </record>
+
+    <record id="warehouse_138" model="stock.warehouse">
+        <field name="name">Cabang Pembantu Daya</field>
+        <field name="code">138</field>
+    </record>
+
+    <record id="warehouse_400" model="stock.warehouse">
+        <field name="name">Cabang Khusus Jakarta</field>
+        <field name="code">400</field>
+    </record>
+
+    <record id="warehouse_510" model="stock.warehouse">
+        <field name="name">Cabang Syariah Makassar</field>
+        <field name="code">510</field>
+    </record>
+
+    <record id="warehouse_530" model="stock.warehouse">
+        <field name="name">Cabang Syariah Maros</field>
+        <field name="code">530</field>
+    </record>
+
+    <record id="warehouse_520" model="stock.warehouse">
+        <field name="name">Cabang Syariah Sengkang</field>
+        <field name="code">520</field>
+    </record>
+
+    <record id="warehouse_540" model="stock.warehouse">
+        <field name="name">Cabang Syariah Mamuju</field>
+        <field name="code">540</field>
+    </record>
+
+</data>
+</openerp>

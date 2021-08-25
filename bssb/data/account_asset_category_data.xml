@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="asset_categ_tanah" model="account.asset.category">
+    <field name="name">Tanah</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_001"/>
+    <field name="account_depreciation_id" ref="account_001"/>
+    <field name="account_expense_depreciation_id" ref="account_001"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="0"/>
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_biaya_tanah" model="account.asset.category">
+    <field name="name">Biaya Pengurusan Tanah</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_001"/>
+    <field name="account_depreciation_id" ref="account_001"/>
+    <field name="account_expense_depreciation_id" ref="account_001"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="0"/>
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_bangunan_permanen" model="account.asset.category">
+    <field name="name">Bangunan Gedung/Rumah Dinas Permanen</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_002"/>
+    <field name="account_depreciation_id" ref="account_003"/>
+    <field name="account_expense_depreciation_id" ref="account_004"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="20"/>
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_bangunan_non_permanen" model="account.asset.category">
+    <field name="name">Bangunan Gedung/Rumah Dinas Tidak Permanen</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_002"/>
+    <field name="account_depreciation_id" ref="account_003"/>
+    <field name="account_expense_depreciation_id" ref="account_004"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="10"/>
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_kendaraan_2" model="account.asset.category">
+    <field name="name">Kendaraan Roda 2</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_005"/>
+    <field name="account_depreciation_id" ref="account_006"/>
+    <field name="account_expense_depreciation_id" ref="account_007"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="4"/>
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.5"/>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_kendaraan_4" model="account.asset.category">
+    <field name="name">Kendaraan Roda 4</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_005"/>
+    <field name="account_depreciation_id" ref="account_006"/>
+    <field name="account_expense_depreciation_id" ref="account_007"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="8"/>
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.25"/>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_perlengkapan_kayu" model="account.asset.category">
+    <field name="name">Mebel dan peralatan dari kayu atau rotan atau akrilik atau fiber atau kaca dan sejenisnya yang bukan bagian dari bangunan</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_008"/>
+    <field name="account_depreciation_id" ref="account_009"/>
+    <field name="account_expense_depreciation_id" ref="account_010"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="4"/>
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.5"/>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_perlengkapan_mesin" model="account.asset.category">
+    <field name="name">Mesin kantor, mesin pengolahan data elektronik, perangkat jaringan dan sejenisnya</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_008"/>
+    <field name="account_depreciation_id" ref="account_009"/>
+    <field name="account_expense_depreciation_id" ref="account_010"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="4"/>
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.5"/>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+<record id="asset_categ_perlengkapan_lain" model="account.asset.category">
+    <field name="name">Perlengkapan Lainnya</field>
+    <field name="journal_id" ref="account_journal_depreciation"/>
+    <field name="account_asset_id" ref="account_008"/>
+    <field name="account_depreciation_id" ref="account_009"/>
+    <field name="account_expense_depreciation_id" ref="account_010"/>
+    <field name="improvement_journal_id" eval="account_journal_improvement"/>
+    <field name="impairment_journal_id" eval="account_journal_impairment"/>
+    <field name="impairment_account_id" eval="account_011"/>
+    <field name="impairment_expense_account_id" eval="account_012"/>
+    <field name="impairment_reversal_account_id" eval="account_013"/>
+    <field name="time_method">year</field>
+    <field name="method_number" eval="4"/>
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.5"/>
+    <field name="prorata" eval="1"/>
+    <field name="date_min_prorate" eval="31"/>
+</record>
+
+</data>
+</openerp>

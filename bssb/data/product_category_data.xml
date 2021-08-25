@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="product_categ_fixed_asset" model="product.category">
+    <field name="name">Fixed Asset</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product.product_category_all"/>
+</record>
+
+<record id="product_categ_tanah" model="product.category">
+    <field name="name">Tanah</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_fixed_asset"/>
+</record>
+
+<record id="product_categ_tanah_tanah" model="product.category">
+    <field name="name">Tanah</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_tanah"/>
+</record>
+
+<record id="product_categ_biaya_tanah" model="product.category">
+    <field name="name">Biaya Pengurusan Tanah</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_tanah"/>
+</record>
+
+<record id="product_categ_bangunan" model="product.category">
+    <field name="name">Bangunan</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_fixed_asset"/>
+</record>
+
+<record id="product_categ_bangunan_permanen" model="product.category">
+    <field name="name">Bangunan Permanen</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_bangunan"/>
+</record>
+
+<record id="product_categ_bangunan_non_permanen" model="product.category">
+    <field name="name">Bangunan Tidak Permanen</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_bangunan"/>
+</record>
+
+<record id="product_categ_kendaraan" model="product.category">
+    <field name="name">Kendaraan</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_fixed_asset"/>
+</record>
+
+<record id="product_categ_kendaraan_4" model="product.category">
+    <field name="name">Kendaraan Roda 4</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_kendaraan"/>
+</record>
+
+<record id="product_categ_kendaraan_2" model="product.category">
+    <field name="name">Kendaraan Roda 2</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_kendaraan"/>
+</record>
+
+<record id="product_categ_perlengkapan" model="product.category">
+    <field name="name">Perabot &amp; Perlengkapan</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_fixed_asset"/>
+</record>
+
+<record id="product_categ_perlengkapan_kayu" model="product.category">
+    <field name="name">Mebel dan peralatan dari kayu atau rotan atau akrilik atau fiber atau kaca dan sejenisnya yang bukan bagian dari bangunan</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_perlengkapan"/>
+</record>
+
+<record id="product_categ_perlengkapan_kantor" model="product.category">
+    <field name="name">Mesin kantor, mesin pengolahan data elektronik, perangkat jaringan dan sejenisnya</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_perlengkapan"/>
+</record>
+
+<record id="product_categ_perlengkapan_lain" model="product.category">
+    <field name="name">Perlengkapan lainnya</field>
+    <field name="type">normal</field>
+    <field name="parent_id" ref="product_categ_perlengkapan"/>
+</record>
+</data>
+</openerp>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+    <record id="ou_DK-BSSB" model="operating.unit">
+        <field name="name">Dewan Komisaris</field>
+        <field name="code">DK-BSSB</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DIR" model="operating.unit">
+        <field name="name">Direksi</field>
+        <field name="code">DIR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GPP" model="operating.unit">
+        <field name="name">Grup Perencanaan dan Pengembangan</field>
+        <field name="code">GPP</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GSM" model="operating.unit">
+        <field name="name">Grup Sumber Daya Manusia</field>
+        <field name="code">GSM</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GKD" model="operating.unit">
+        <field name="name">Grup Kredit</field>
+        <field name="code">GKD</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GPK" model="operating.unit">
+        <field name="name">Grup Pengendalian Keuangan</field>
+        <field name="code">GPK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GUM" model="operating.unit">
+        <field name="name">Grup Umum</field>
+        <field name="code">GUM</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GMR" model="operating.unit">
+        <field name="name">Grup Management Resiko</field>
+        <field name="code">GMR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GTI" model="operating.unit">
+        <field name="name">Grup Teknologi Informasi</field>
+        <field name="code">GTI</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GCS" model="operating.unit">
+        <field name="name">Grup Corporate Secretary</field>
+        <field name="code">GCS</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GAI" model="operating.unit">
+        <field name="name">Grup Audit Intern dan Anti Fraud</field>
+        <field name="code">GAI</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GKP" model="operating.unit">
+        <field name="name">Grup Kepatuhan </field>
+        <field name="code">GKP</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GTR" model="operating.unit">
+        <field name="name">Grup Treasury</field>
+        <field name="code">GTR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GUS" model="operating.unit">
+        <field name="name">Grup Unit Usaha Syariah</field>
+        <field name="code">GUS</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DCC" model="operating.unit">
+        <field name="name">Dept. Card Center</field>
+        <field name="code">DCC</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DPK" model="operating.unit">
+        <field name="name">Dept. Dana Pihak Ketiga</field>
+        <field name="code">DPK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DIB" model="operating.unit">
+        <field name="name">Dept. International Banking</field>
+        <field name="code">DIB</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DPLK" model="operating.unit">
+        <field name="name">Dept. Dana Pensiun Lembaga Keuangan</field>
+        <field name="code">DPLK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_CMU" model="operating.unit">
+        <field name="name">Dept. CMU</field>
+        <field name="code">CMU</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MR" model="operating.unit">
+        <field name="name">Cabang Maros</field>
+        <field name="code">MR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PK" model="operating.unit">
+        <field name="name">Cabang Pangkep</field>
+        <field name="code">PK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_JP" model="operating.unit">
+        <field name="name">Cabang Jeneponto</field>
+        <field name="code">JP</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_TK" model="operating.unit">
+        <field name="name">Cabang Takalar</field>
+        <field name="code">TK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PR" model="operating.unit">
+        <field name="name">Cabang Parepare</field>
+        <field name="code">PR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_BR" model="operating.unit">
+        <field name="name">Cabang Barru</field>
+        <field name="code">BR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_BK" model="operating.unit">
+        <field name="name">Cabang Utama Bulukumba</field>
+        <field name="code">BK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_BT" model="operating.unit">
+        <field name="name">Cabang Bantaeng</field>
+        <field name="code">BT</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SL" model="operating.unit">
+        <field name="name">Cabang Selayar</field>
+        <field name="code">SL</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PG" model="operating.unit">
+        <field name="name">Cabang Pinrang</field>
+        <field name="code">PG</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SJ" model="operating.unit">
+        <field name="name">Cabang Sinjai</field>
+        <field name="code">SJ</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PM" model="operating.unit">
+        <field name="name">Cabang Polman</field>
+        <field name="code">PM</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MJ" model="operating.unit">
+        <field name="name">Cabang Utama Mamuju</field>
+        <field name="code">MJ</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MN" model="operating.unit">
+        <field name="name">Cabang Majene</field>
+        <field name="code">MN</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MM" model="operating.unit">
+        <field name="name">Cabang Mamasa</field>
+        <field name="code">MM</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PSK" model="operating.unit">
+        <field name="name">Cabang Pasangkayu</field>
+        <field name="code">PSK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_TPY" model="operating.unit">
+        <field name="name">Cabang Topoyo</field>
+        <field name="code">TPY</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_BN" model="operating.unit">
+        <field name="name">Cabang Utama Bone</field>
+        <field name="code">BN</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_KH" model="operating.unit">
+        <field name="name">Cabang Pembantu Kahu</field>
+        <field name="code">KH</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_PL" model="operating.unit">
+        <field name="name">Cabang Utama Palopo</field>
+        <field name="code">PL</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MSB" model="operating.unit">
+        <field name="name">Cabang Masamba</field>
+        <field name="code">MSB</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_BLP" model="operating.unit">
+        <field name="name">Cabang Belopa</field>
+        <field name="code">BLP</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_ML" model="operating.unit">
+        <field name="name">Cabang Malili</field>
+        <field name="code">ML</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_WO" model="operating.unit">
+        <field name="name">Cabang Sengkang</field>
+        <field name="code">WO</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SP" model="operating.unit">
+        <field name="name">Cabang Soppeng</field>
+        <field name="code">SP</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SW" model="operating.unit">
+        <field name="name">Cabang Pembantu Siwa</field>
+        <field name="code">SW</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_TT" model="operating.unit">
+        <field name="name">Cabang Makale</field>
+        <field name="code">TT</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_TU" model="operating.unit">
+        <field name="name">Cabang Rantepao</field>
+        <field name="code">TU</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SR" model="operating.unit">
+        <field name="name">Cabang Sidrap</field>
+        <field name="code">SR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_EK" model="operating.unit">
+        <field name="name">Cabang Enrekang</field>
+        <field name="code">EK</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_MKS" model="operating.unit">
+        <field name="name">Cabang Utama Makassar</field>
+        <field name="code">MKS</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_GW" model="operating.unit">
+        <field name="name">Cabang Gowa</field>
+        <field name="code">GW</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_DY" model="operating.unit">
+        <field name="name">Cabang Pembantu Daya</field>
+        <field name="code">DY</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_JKT" model="operating.unit">
+        <field name="name">Cabang Khusus Jakarta</field>
+        <field name="code">JKT</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SY-MKS" model="operating.unit">
+        <field name="name">Cabang Syariah Makassar</field>
+        <field name="code">SY-MKS</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SY-MR" model="operating.unit">
+        <field name="name">Cabang Syariah Maros</field>
+        <field name="code">SY-MR</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SY-WO" model="operating.unit">
+        <field name="name">Cabang Syariah Sengkang</field>
+        <field name="code">SY-WO</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+    <record id="ou_SY-MJ" model="operating.unit">
+        <field name="name">Cabang Syariah Mamuju</field>
+        <field name="code">SY-MJ</field>
+        <field name="partner_id" ref="base.main_partner"/>
+    </record>
+
+</data>
+</openerp>

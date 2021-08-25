@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="account_complex_asset_installation_server_action" model="ir.actions.server">
+    <field name="name">Complex Asset Removal</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="fixed_asset_complex_asset.model_account_complex_asset_removal"/>
+    <field name="code">waction = env.ref("fixed_asset_complex_asset.account_complex_asset_removal_action").read()[0]
+waction["domain"] = [
+    ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
+    ]
+action = waction
+    </field>
+</record>
+
+<menuitem
+    id="account_complex_asset_removal_menu"
+    name="Removal"
+    parent="ati_fixed_asset_complex_asset_menu"
+    action="account_complex_asset_installation_server_action"
+    sequence="2"/>
+
+</data>
+</openerp>

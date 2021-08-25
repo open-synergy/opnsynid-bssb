@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="account_type_perolehan_aset_tetap" model="account.account.type">
+    <field name="name">Perolehan Aset Tetap</field>
+    <field name="code">T01</field>
+    <field name="report_type">asset</field>
+    <field name="close_method">balance</field>
+</record>
+
+<record id="account_type_ak_penyusutan" model="account.account.type">
+    <field name="name">Ak. Penyusutan Aset Tetap</field>
+    <field name="code">T02</field>
+    <field name="report_type">asset</field>
+    <field name="close_method">balance</field>
+</record>
+
+<record id="account_type_beban_penyusutan" model="account.account.type">
+    <field name="name">Beban Penyusutan Aset Tetap</field>
+    <field name="code">T03</field>
+    <field name="report_type">expense</field>
+    <field name="close_method">none</field>
+</record>
+
+<record id="account_type_impairment" model="account.account.type">
+    <field name="name">Impairment</field>
+    <field name="code">T04</field>
+    <field name="report_type">asset</field>
+    <field name="close_method">balance</field>
+</record>
+
+<record id="account_type_impairment_expense" model="account.account.type">
+    <field name="name">Impairment Expense</field>
+    <field name="code">T05</field>
+    <field name="report_type">expense</field>
+    <field name="close_method">none</field>
+</record>
+
+<record id="account_type_impairment_expense_reversal" model="account.account.type">
+    <field name="name">Impairment Expense Reversal</field>
+    <field name="code">T06</field>
+    <field name="report_type">expense</field>
+    <field name="close_method">none</field>
+</record>
+</data>
+</openerp>

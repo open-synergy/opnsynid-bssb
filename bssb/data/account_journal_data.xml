@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="account_journal_depreciation" model="account.journal">
+    <field name="name">Depresiasi</field>
+    <field name="code">DEP</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_improvement" model="account.journal">
+    <field name="name">Improvement</field>
+    <field name="code">IPR</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_impairment" model="account.journal">
+    <field name="name">Impairment</field>
+    <field name="code">IPA</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_impairment_reversal" model="account.journal">
+    <field name="name">Impairment Reversal</field>
+    <field name="code">IPV</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_disposal" model="account.journal">
+    <field name="name">Disposal</field>
+    <field name="code">DIS</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_disposal_exchange" model="account.journal">
+    <field name="name">Exchange</field>
+    <field name="code">EXC</field>
+    <field name="type">general</field>
+</record>
+
+<record id="account_journal_disposal_gain" model="account.journal">
+    <field name="name">Gain/Loss</field>
+    <field name="code">GL</field>
+    <field name="type">general</field>
+</record>
+</data>
+</openerp>

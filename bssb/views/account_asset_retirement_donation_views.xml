@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+<record id="account_asset_retirement_donation_server_action" model="ir.actions.server">
+    <field name="name">Asset Retirement by Donation</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="fixed_asset_retirement_donation.model_account_asset_retirement_donation"/>
+    <field name="code">waction = env.ref("fixed_asset_retirement_donation.account_asset_retirement_donation_action").read()[0]
+waction["domain"] = [
+    ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
+    ]
+action = waction
+    </field>
+</record>
+
+<menuitem
+    id="account_asset_retirement_donation_menu"
+    name="Donation"
+    parent="ati_fixed_asset_disposal_menu"
+    action="account_asset_retirement_donation_server_action"
+    sequence="1"/>
+
+</data>
+</openerp>

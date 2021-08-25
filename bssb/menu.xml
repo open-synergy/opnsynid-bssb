@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+    <menuitem
+        id="ati_main_menu"
+        name="ATI"
+        sequence="20"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_menu"
+        name="Fixed Asset"
+        sequence="1"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_acquisition_menu"
+        name="Fixed Asset Acquisition"
+        sequence="2"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_utilization_menu"
+        name="Fixed Asset Utilization"
+        sequence="3"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_complex_asset_menu"
+        name="Complex Asset"
+        sequence="2"
+        parent="ati_fixed_asset_utilization_menu"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_estimation_change_menu"
+        name="Estimation Change"
+        sequence="3"
+        parent="ati_fixed_asset_utilization_menu"
+        />
+
+    <menuitem
+        id="ati_fixed_asset_disposal_menu"
+        name="Fixed Asset Disposal"
+        sequence="4"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_inventory_menu"
+        name="Inventory"
+        sequence="5"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_incoming_movement_menu"
+        name="Incoming Movement"
+        sequence="6"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_internal_movement_menu"
+        name="Internal Movement"
+        sequence="7"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_outgoing_movement_menu"
+        name="Outgoing Movement"
+        sequence="8"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_report_menu"
+        name="Report"
+        sequence="98"
+        parent="ati_main_menu"
+        />
+
+    <menuitem
+        id="ati_configuration_menu"
+        name="Configuration"
+        sequence="99"
+        parent="ati_main_menu"
+        />
+
+</data>
+</openerp>
