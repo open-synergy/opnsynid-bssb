@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2021 OpenSynergy Indonesia
      Copyright 2021 PT. Simetri Sinergi Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
 <openerp>
 <data noupdate="1">
 <record id="account_root" model="account.account">
     <field name="name">Root</field>
     <field name="code">0</field>
     <field name="type">view</field>
-    <field name="user_type" ref="account.data_account_type_view"/>
+    <field name="user_type" ref="account.data_account_type_view" />
 </record>
 
 <record id="account_001" model="account.account">
     <field name="name">Perolehan Tanah</field>
     <field name="code">001</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_perolehan_aset_tetap"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <!-- Bangunan -->
@@ -24,24 +25,24 @@
     <field name="name">Perolehan Bangunan</field>
     <field name="code">002</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_perolehan_aset_tetap"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_003" model="account.account">
     <field name="name">Ak. Penyusutan Bangunan</field>
     <field name="code">003</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_ak_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_ak_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_004" model="account.account">
     <field name="name">Beban Penyusutan Bangunan</field>
     <field name="code">004</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_beban_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_beban_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <!-- Kendaraan -->
@@ -49,24 +50,24 @@
     <field name="name">Perolehan Kendaraan</field>
     <field name="code">005</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_perolehan_aset_tetap"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_006" model="account.account">
     <field name="name">Ak. Penyusutan Kendaraan</field>
     <field name="code">006</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_ak_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_ak_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_007" model="account.account">
     <field name="name">Beban Penyusutan Kendaraan</field>
     <field name="code">007</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_beban_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_beban_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <!-- Perlengkapan -->
@@ -74,48 +75,48 @@
     <field name="name">Perolehan Perlengkapan</field>
     <field name="code">008</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_perolehan_aset_tetap"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_009" model="account.account">
     <field name="name">Ak. Penyusutan Perlengkapan</field>
     <field name="code">009</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_ak_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_ak_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_010" model="account.account">
     <field name="name">Beban Penyusutan Perlengkapan</field>
     <field name="code">010</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_beban_penyusutan"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_beban_penyusutan" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_011" model="account.account">
     <field name="name">Impairment</field>
     <field name="code">011</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_impairment"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_impairment" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_012" model="account.account">
     <field name="name">Impairment Expense</field>
     <field name="code">012</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_impairment_expense"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_impairment_expense" />
+    <field name="parent_id" ref="account_root" />
 </record>
 
 <record id="account_013" model="account.account">
     <field name="name">Impairment Expense Reversal</field>
     <field name="code">013</field>
     <field name="type">other</field>
-    <field name="user_type" ref="account_type_impairment_expense_reversal"/>
-    <field name="parent_id" ref="account_root"/>
+    <field name="user_type" ref="account_type_impairment_expense_reversal" />
+    <field name="parent_id" ref="account_root" />
 </record>
 </data>
 </openerp>

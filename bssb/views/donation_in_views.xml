@@ -15,7 +15,7 @@
     <field name="name">Donation In</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="stock.model_stock_picking"/>
+    <field name="model_id" ref="stock.model_stock_picking" />
     <field name="code">waction = env.ref("bssb.donation_in_window_action").read()[0]
 subtype_id = env.ref("stock_donation_operation.donation_in_subtype").id
 waction["domain"] = [
@@ -28,12 +28,12 @@ action = waction
 </record>
 
 <menuitem
-    id="menu_donation_in"
-    parent="ati_incoming_movement_menu"
-    name="Donation In"
-    action="donation_in_server_action"
-    sequence="3"
-      />
+            id="menu_donation_in"
+            parent="ati_incoming_movement_menu"
+            name="Donation In"
+            action="donation_in_server_action"
+            sequence="3"
+        />
 
     </data>
 </openerp>

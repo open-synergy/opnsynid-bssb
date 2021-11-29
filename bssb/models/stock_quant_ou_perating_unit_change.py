@@ -1,9 +1,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from datetime import datetime
 
-from dateutil.relativedelta import relativedelta
 from openerp import api, fields, models
 
 
@@ -71,7 +69,9 @@ class StockQuantOperatingUnitChange(models.Model):
     source_operating_unit_id = fields.Many2one(
         string="Source Operating Unit",
         comodel_name="operating.unit",
-        default=lambda self: self.env['res.users'].operating_unit_default_get(self._uid),
+        default=lambda self: self.env["res.users"].operating_unit_default_get(
+            self._uid
+        ),
         required=True,
         readonly=True,
         states={
@@ -273,13 +273,9 @@ class StockQuantOperatingUnitChange(models.Model):
             ("lot_id", "=", self.lot_id.id),
         ]
         quants = self.env["stock.quant"].search(criteria)
-        quants.write({
-            "operating_unit_id": self.dest_operating_unit_id.id
-        })
+        quants.write({"operating_unit_id": self.dest_operating_unit_id.id})
         assets = self.env["account.asset.asset"].search(criteria)
-        assets.write({
-            "operating_unit_id": self.dest_operating_unit_id.id
-        })
+        assets.write({"operating_unit_id": self.dest_operating_unit_id.id})
 
     @api.multi
     def _prepare_cancel_data(self):

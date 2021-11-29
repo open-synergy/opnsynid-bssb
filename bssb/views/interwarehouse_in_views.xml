@@ -15,8 +15,10 @@
     <field name="name">Inter-Warehouse In</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="stock.model_stock_picking"/>
-    <field name="code">waction = env.ref("bssb.interwarehouse_in_window_action").read()[0]
+    <field name="model_id" ref="stock.model_stock_picking" />
+    <field
+                name="code"
+            >waction = env.ref("bssb.interwarehouse_in_window_action").read()[0]
 subtype_id = env.ref("stock_interwarehouse_operation.inter_warehouse_in_subtype").id
 waction["domain"] = [
     ("picking_type_id.subtype_id.id","=", subtype_id),
@@ -28,12 +30,12 @@ action = waction
 </record>
 
 <menuitem
-    id="menu_interwarehouse_in"
-    parent="ati_incoming_movement_menu"
-    name="Inter-Warehouse In"
-    action="interwarehouse_in_server_action"
-    sequence="2"
-      />
+            id="menu_interwarehouse_in"
+            parent="ati_incoming_movement_menu"
+            name="Inter-Warehouse In"
+            action="interwarehouse_in_server_action"
+            sequence="2"
+        />
 
     </data>
 </openerp>

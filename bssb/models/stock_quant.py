@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class StockQuant(models.Model):
@@ -12,7 +12,9 @@ class StockQuant(models.Model):
     operating_unit_id = fields.Many2one(
         string="Operating Unit",
         comodel_name="operating.unit",
-        default=lambda self: self.env['res.users'].operating_unit_default_get(self._uid),
+        default=lambda self: self.env["res.users"].operating_unit_default_get(
+            self._uid
+        ),
     )
 
     @api.model
@@ -34,8 +36,12 @@ class StockQuant(models.Model):
         move = self.history_ids[0]  # TODO: Error prone?
         if move.picking_id:
             picking = move.picking_id
-            operating_unit_id = picking.operating_unit_id and picking.operating_unit_id.id or False
-        result.update({
-            "operating_unit_id": operating_unit_id,
-        })
+            operating_unit_id = (
+                picking.operating_unit_id and picking.operating_unit_id.id or False
+            )
+        result.update(
+            {
+                "operating_unit_id": operating_unit_id,
+            }
+        )
         return result

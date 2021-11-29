@@ -6,7 +6,6 @@
 from . import (
     stock_quant,
     stock_picking_type,
-    stock_move,
     stock_picking,
     account_asset_asset,
     stock_quant_ou_perating_unit_change,
