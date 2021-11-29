@@ -13,3 +13,4 @@
 #
 # To provide both the URL and a branch, use:
 operating-unit https://github.com/open-synergy/operating-unit.git 8.0-dev
+opnsynid-fixed-asset https://github.com/open-synergy/opnsynid-fixed-asset.git 8.0
