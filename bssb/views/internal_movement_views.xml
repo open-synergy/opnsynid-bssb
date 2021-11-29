@@ -15,8 +15,10 @@
     <field name="name">Internal Movements</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="stock.model_stock_picking"/>
-    <field name="code">waction = env.ref("bssb.internal_movement_window_action").read()[0]
+    <field name="model_id" ref="stock.model_stock_picking" />
+    <field
+                name="code"
+            >waction = env.ref("bssb.internal_movement_window_action").read()[0]
 picking_type_id = env.ref("stock.picking_type_internal").id
 subtype_id = env.ref("stock_operation_subtype.internal_transfer_subtype").id
 waction["domain"] = [
@@ -29,11 +31,11 @@ action = waction
 </record>
 
 <menuitem
-    id="menu_internal_movement"
-    parent="ati_internal_movement_menu"
-    name="Internal Movements"
-    action="internal_movement_server_action"
-      />
+            id="menu_internal_movement"
+            parent="ati_internal_movement_menu"
+            name="Internal Movements"
+            action="internal_movement_server_action"
+        />
 
     </data>
 </openerp>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
@@ -8,8 +8,13 @@
     <field name="name">Fixed Asset Impairment</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="fixed_asset_impairment.model_account_asset_impairment"/>
-    <field name="code">waction = env.ref("fixed_asset_impairment.account_asset_impairment_action").read()[0]
+    <field
+                name="model_id"
+                ref="fixed_asset_impairment.model_account_asset_impairment"
+            />
+    <field
+                name="code"
+            >waction = env.ref("fixed_asset_impairment.account_asset_impairment_action").read()[0]
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
@@ -18,11 +23,12 @@ action = waction
 </record>
 
 <menuitem
-    id="account_asset_impairment_menu"
-    name="Impairment"
-    parent="ati_fixed_asset_utilization_menu"
-    action="account_asset_impairment_server_action"
-    sequence="4"/>
+            id="account_asset_impairment_menu"
+            name="Impairment"
+            parent="ati_fixed_asset_utilization_menu"
+            action="account_asset_impairment_server_action"
+            sequence="4"
+        />
 
 
 </data>

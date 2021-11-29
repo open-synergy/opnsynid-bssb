@@ -15,7 +15,7 @@
     <field name="name">Stolen</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="stock.model_stock_picking"/>
+    <field name="model_id" ref="stock.model_stock_picking" />
     <field name="code">waction = env.ref("bssb.stolen_window_action").read()[0]
 subtype_id = env.ref("stock_stolen_operation.stolen_subtype").id
 waction["domain"] = [
@@ -28,12 +28,12 @@ action = waction
 </record>
 
 <menuitem
-    id="menu_stolen"
-    parent="ati_outgoing_movement_menu"
-    name="Stolen"
-    action="stolen_server_action"
-    sequence="2"
-      />
+            id="menu_stolen"
+            parent="ati_outgoing_movement_menu"
+            name="Stolen"
+            action="stolen_server_action"
+            sequence="2"
+        />
 
     </data>
 </openerp>
