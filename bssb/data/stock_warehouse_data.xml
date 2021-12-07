@@ -4,7 +4,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
      pylint: disable=locally-disabled, file-not-used -->
 <openerp>
-<data>
+<data noupdate="1">
     <record id="warehouse_0001" model="stock.warehouse">
         <field name="name">Kantor Pusat</field>
         <field name="code">0001</field>

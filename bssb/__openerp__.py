@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "BSSB",
-    "version": "8.0.1.4.0",
+    "version": "8.0.1.5.0",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
@@ -29,13 +29,13 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        # "data/operating_unit_data.xml",
-        # "data/stock_warehouse_data.xml",
-        # "data/account_journal_data.xml",
+        "data/operating_unit_data.xml",
+        "data/stock_warehouse_data.xml",
+        "data/account_journal_data.xml",
         # "data/product_category_data.xml",
-        # "data/account_type_data.xml",
-        # "data/account_account_data.xml",
-        # "data/account_asset_category_data.xml",
+        "data/account_type_data.xml",
+        "data/account_account_data.xml",
+        "data/account_asset_category_data.xml",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",

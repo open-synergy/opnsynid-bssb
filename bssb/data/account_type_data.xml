@@ -4,7 +4,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
      pylint: disable=locally-disabled, file-not-used -->
 <openerp>
-<data>
+<data noupdate="1">
 <record id="account_type_perolehan_aset_tetap" model="account.account.type">
     <field name="name">Perolehan Aset Tetap</field>
     <field name="code">T01</field>

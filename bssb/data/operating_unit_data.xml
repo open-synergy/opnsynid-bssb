@@ -4,7 +4,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
      pylint: disable=locally-disabled, file-not-used -->
 <openerp>
-<data>
+<data noupdate="1">
     <record id="ou_DK-BSSB" model="operating.unit">
         <field name="name">Dewan Komisaris</field>
         <field name="code">DK-BSSB</field>
