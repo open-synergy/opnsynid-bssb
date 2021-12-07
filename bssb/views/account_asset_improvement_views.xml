@@ -15,13 +15,14 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Pengembangan"
 action = waction
     </field>
 </record>
 
 <menuitem
             id="account_asset_improvement_menu"
-            name="Improvement"
+            name="Pengembangan"
             parent="ati_fixed_asset_utilization_menu"
             action="account_asset_improvement_server_action"
             sequence="1"

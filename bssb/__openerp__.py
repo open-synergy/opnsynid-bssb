@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
-    "name": "BSSB Data",
-    "version": "8.0.1.3.0",
+    "name": "BSSB",
+    "version": "8.0.1.4.0",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",

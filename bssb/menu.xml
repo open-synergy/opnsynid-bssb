@@ -8,79 +8,84 @@
 
     <menuitem
             id="ati_fixed_asset_menu"
-            name="Fixed Asset"
+            name="Aset Tetap"
             sequence="1"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_fixed_asset_acquisition_menu"
-            name="Fixed Asset Acquisition"
+            name="Perolehan Aset Tetap"
             sequence="2"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_fixed_asset_utilization_menu"
-            name="Fixed Asset Utilization"
+            name="Pemakaian Aset Tetap"
             sequence="3"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_fixed_asset_complex_asset_menu"
-            name="Complex Asset"
+            name="Aset Kompleks"
             sequence="2"
             parent="ati_fixed_asset_utilization_menu"
         />
 
     <menuitem
             id="ati_fixed_asset_estimation_change_menu"
-            name="Estimation Change"
+            name="Perubahan Estimasi"
             sequence="3"
             parent="ati_fixed_asset_utilization_menu"
         />
 
     <menuitem
             id="ati_fixed_asset_disposal_menu"
-            name="Fixed Asset Disposal"
+            name="Pelepasan Aset Tetap"
             sequence="4"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_inventory_menu"
-            name="Inventory"
+            name="Inventaris"
             sequence="5"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_incoming_movement_menu"
-            name="Incoming Movement"
+            name="Pergerakan Masuk"
             sequence="6"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_internal_movement_menu"
-            name="Internal Movement"
+            name="Pergerakan Internal"
             sequence="7"
             parent="ati_main_menu"
         />
 
     <menuitem
             id="ati_outgoing_movement_menu"
-            name="Outgoing Movement"
+            name="Pergerakan Keluar"
             sequence="8"
             parent="ati_main_menu"
         />
 
-    <menuitem id="ati_report_menu" name="Report" sequence="98" parent="ati_main_menu" />
+    <menuitem
+            id="ati_report_menu"
+            name="Laporan"
+            sequence="98"
+            parent="ati_main_menu"
+        />
 
     <menuitem
             id="ati_configuration_menu"
-            name="Configuration"
+            name="Pengaturan"
             sequence="99"
             parent="ati_main_menu"
         />

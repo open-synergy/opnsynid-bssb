@@ -18,6 +18,7 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Impairment"
 action = waction
     </field>
 </record>

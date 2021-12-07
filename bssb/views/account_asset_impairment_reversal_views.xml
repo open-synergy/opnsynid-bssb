@@ -18,13 +18,14 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Pembalikan Impairment"
 action = waction
     </field>
 </record>
 
 <menuitem
             id="account_asset_impairment_reversal_menu"
-            name="Impairment Reversal"
+            name="Pembalikan Impairment"
             parent="ati_fixed_asset_utilization_menu"
             action="account_asset_impairment_reversal_server_action"
             sequence="5"

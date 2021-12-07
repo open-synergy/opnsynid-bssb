@@ -21,13 +21,14 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Perubahan Estimasi Nilai Residu"
 action = waction
     </field>
 </record>
 
 <menuitem
             id="account_asset_change_estimation_salvage_menu"
-            name="Salvage Value"
+            name="Nilai Residu"
             parent="ati_fixed_asset_estimation_change_menu"
             action="account_asset_change_estimation_salvage_server_action"
             sequence="1"

@@ -44,6 +44,7 @@
 waction["domain"] = [
     ("operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Aset Tetap"
 action = waction
 
     </field>
@@ -52,7 +53,7 @@ action = waction
 <menuitem
             id="menu_account_asset_asset"
             parent="ati_fixed_asset_menu"
-            name="Fixed Assets"
+            name="Aset Tetap"
             action="bssb_account_asset_asset_action"
             sequence="1"
         />

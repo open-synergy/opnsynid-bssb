@@ -18,13 +18,14 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Hilang"
 action = waction
     </field>
 </record>
 
 <menuitem
             id="account_asset_retirement_missing_menu"
-            name="Missing"
+            name="Hilang"
             parent="ati_fixed_asset_disposal_menu"
             action="account_asset_retirement_missing_server_action"
             sequence="2"

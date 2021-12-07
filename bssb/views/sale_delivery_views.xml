@@ -23,6 +23,7 @@ waction["domain"] = [
     ("picking_type_id.subtype_id.id","=", subtype_id),
     ("operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Jual"
 waction["context"] = {"subtype_id": subtype_id, "operating_unit_ids": env.user.operating_unit_ids.ids}
 action = waction
     </field>
@@ -31,7 +32,7 @@ action = waction
 <menuitem
             id="menu_sale_delivery"
             parent="ati_outgoing_movement_menu"
-            name="Sale Deliveries"
+            name="Jual"
             action="sale_delivery_server_action"
         />
 

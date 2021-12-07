@@ -18,6 +18,7 @@
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]
+waction["name"] = "Jual"
 action = waction
     </field>
 </record>
@@ -25,7 +26,7 @@ action = waction
 
 <menuitem
             id="account_asset_retirement_sale_menu"
-            name="Sale"
+            name="Jual"
             parent="ati_fixed_asset_disposal_menu"
             action="account_asset_retirement_sale_server_action"
             sequence="3"
