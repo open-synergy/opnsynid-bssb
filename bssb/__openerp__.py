@@ -33,6 +33,7 @@
         "data/stock_warehouse_data.xml",
         "data/account_journal_data.xml",
         # "data/product_category_data.xml",
+        "data/product.category.csv",
         "data/account_type_data.xml",
         "data/account_account_data.xml",
         "data/account_asset_category_data.xml",
