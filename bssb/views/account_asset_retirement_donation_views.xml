@@ -29,6 +29,7 @@ action = waction
             parent="ati_fixed_asset_disposal_menu"
             action="account_asset_retirement_donation_server_action"
             sequence="1"
+            groups="group_pat_user"
         />
 
 </data>

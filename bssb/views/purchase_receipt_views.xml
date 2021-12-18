@@ -37,6 +37,7 @@ action = waction
             name="Pembelian"
             action="purchase_receipt_server_action"
             sequence="1"
+            groups="group_pat_user"
         />
 
     </data>

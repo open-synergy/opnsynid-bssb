@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="lokasi_action" model="ir.actions.act_window">
+      <field name="name">Lokasi/Ruangan</field>
+      <field name="res_model">stock.location</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+            id="menu_lokasi"
+            parent="ati_configuration_menu"
+            name="Lokasi/Kantor"
+            action="lokasi_action"
+            groups="group_pat_administrator"
+            sequence="5"
+        />
+
+    </data>
+</openerp>

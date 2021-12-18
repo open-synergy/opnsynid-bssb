@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<record
+            id="fixed_asset.base_cancel_reason_config_account_asset"
+            model="base.cancel.reason_config"
+        >
+  <field
+                name="cancel_reason_ids"
+                eval="[(4,[
+    ref('cancel_reason_salah_input')
+    ])]"
+            />
+</record>
+
+</data>
+</openerp>

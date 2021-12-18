@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+  <record id="report_berita_acara_kehilangan_a4_pdf" model="ir.actions.report.xml">
+      <field name="name">Berita Acara Kehilangan A4 PDF</field>
+      <field name="type">ir.actions.report.xml</field>
+      <field name="model">stock.picking</field>
+      <field name="report_name">report_berita_acara_kehilangan_a4_pdf</field>
+      <field name="report_type">aeroo</field>
+      <field name="in_format">oo-odt</field>
+      <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+      <field name="parser_loc">bssb/reports/berita_acara_kehilangan.py</field>
+      <field name="report_rml">bssb/reports/berita_acara_kehilangan.odt</field>
+      <field name="parser_state">loc</field>
+      <field name="tml_source">file</field>
+  </record>
+
+  <record id="print_policy_berita_acara_kehilangan_a4_pdf" model="base.print.policy">
+      <field name="name">Berita Acara Kehilangan A4 PDF</field>
+      <field name="report_action_id" ref="report_berita_acara_kehilangan_a4_pdf" />
+      <field name="python_condition">result=False
+subtype = env["stock_missing_operation.missing_subtype"]
+if record.picking_type_id.subtype_id.id == subtype.id and record.state == 'done':
+    result = True
+      </field>
+  </record>
+</data>
+</openerp>

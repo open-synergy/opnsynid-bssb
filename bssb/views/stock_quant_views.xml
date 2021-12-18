@@ -48,6 +48,7 @@
 waction["domain"] = [
   ("operating_unit_id", "=", env.user.operating_unit_ids.ids),
 ]
+waction["name"] = "Inventaris"
 action = waction
     </field>
 </record>
@@ -55,8 +56,9 @@ action = waction
 <menuitem
             id="menu_inventory"
             parent="ati_inventory_menu"
-            name="Inventories"
+            name="Inventaris"
             action="inventory_server_action"
+            groups="group_pat_user"
         />
 
     </data>

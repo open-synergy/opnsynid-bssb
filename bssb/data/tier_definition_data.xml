@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<!-- Fixed Asset -->
+<record id="tier_def_fixed_asset" model="tier.definition">
+    <field name="name">Fixed Asset - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset.asset')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_fixed_asset" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_fixed_asset" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Capital Improvement -->
+<record id="tier_def_improvement" model="tier.definition">
+    <field name="name">Fixed Asset Improvement - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset_improvement')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_improvement" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_improvement" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Salvage Estimation Change -->
+<record id="tier_def_salvage_change" model="tier.definition">
+    <field name="name">Fixed Asset Salvage Value Estimation Change - Normal</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.asset_change_estimation_salvage')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_salvage_change" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_salvage_change" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Usefull Life Estimation Change -->
+<record id="tier_def_life_change" model="tier.definition">
+    <field name="name">Fixed Asset Useful Life Estimation Change - Normal</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.asset_change_estimation_useful_life')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_life_change" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_life_change" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Impairment -->
+<record id="tier_def_impairment" model="tier.definition">
+    <field name="name">Fixed Asset Impairment - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset.impairment')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_impairment" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_impairment" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Impairment Reversal -->
+<record id="tier_def_impairment_reversal" model="tier.definition">
+    <field name="name">Fixed Asset Impairment Reversal - (test)</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.asset.impairment_reversal')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_impairment_reversal" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_impairment_reversal" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Disposal Donaation -->
+<record id="tier_def_retirement_donation" model="tier.definition">
+    <field name="name">Fixed Asset Retirement by Donation - Normal</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.asset_retirement_donation')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_retirement_donation" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_retirement_donation" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Disposal Missing -->
+<record id="tier_def_retirement_missing" model="tier.definition">
+    <field name="name">Fixed Asset Retirement by Missing - Normal</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.asset_retirement_missing')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_retirement_missing" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_retirement_missing" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Disposaal Sale -->
+<record id="tier_def_retirement_sale" model="tier.definition">
+    <field name="name">Fixed Asset Retirement by Sale - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset_retirement_sale')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_retirement_sale" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_retirement_sale" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Disposal Scrap -->
+<record id="tier_def_retirement_scrap" model="tier.definition">
+    <field name="name">Fixed Asset Retirement by Scrap - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset_retirement_scrap')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_retirement_scrap" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_retirement_scrap" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Disposal Stolen -->
+<record id="tier_def_restirement_stolen" model="tier.definition">
+    <field name="name">Fixed Asset Retirement by Stolen - Normal</field>
+    <field name="model_id" search="[('model','=','account.asset_retirement_stolen')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_restirement_stolen" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_restirement_stolen" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+
+<!-- Ownership Change -->
+<record id="tier_def_ownership_change" model="tier.definition">
+    <field name="name">Quant Operating Unit Change - Normal</field>
+    <field
+                name="model_id"
+                search="[('model','=','stock.quant_operating_unit_change')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_ownership_change" model="tier.definition.review">
+    <field name="definition_id" ref="tier_def_ownership_change" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+</record>
+</data>
+</openerp>

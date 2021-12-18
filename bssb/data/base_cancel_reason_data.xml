@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<record id="cancel_reason_salah_input" model="base.cancel.reason">
+    <field name="name">Salah Input</field>
+</record>
+
+</data>
+</openerp>

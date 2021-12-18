@@ -118,5 +118,73 @@
     <field name="user_type" ref="account_type_impairment_expense_reversal" />
     <field name="parent_id" ref="account_root" />
 </record>
+
+<record id="account_014" model="account.account">
+    <field name="name">A/R</field>
+    <field name="code">014</field>
+    <field name="type">receivable</field>
+    <field name="user_type" ref="account.data_account_type_receivable" />
+    <field name="parent_id" ref="account_root" />
+    <field name="reconcile" eval="1" />
+</record>
+
+<record id="account_015" model="account.account">
+    <field name="name">A/P</field>
+    <field name="code">015</field>
+    <field name="type">payable</field>
+    <field name="user_type" ref="account.data_account_type_payable" />
+    <field name="parent_id" ref="account_root" />
+    <field name="reconcile" eval="1" />
+</record>
+
+<!-- Aplikasi -->
+<record id="account_016" model="account.account">
+    <field name="name">Perolehan Aplikasi</field>
+    <field name="code">016</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_017" model="account.account">
+    <field name="name">Ak. Penyusutan Amortisasi Aplikasi</field>
+    <field name="code">017</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_ak_penyusutan" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_018" model="account.account">
+    <field name="name">Beban Amortisasi Aplikasi</field>
+    <field name="code">018</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_beban_penyusutan" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<!-- Lisensi -->
+<record id="account_019" model="account.account">
+    <field name="name">Perolehan Lisensi</field>
+    <field name="code">019</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_perolehan_aset_tetap" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_020" model="account.account">
+    <field name="name">Ak. Penyusutan Amortisasi Lisensi</field>
+    <field name="code">020</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_ak_penyusutan" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_021" model="account.account">
+    <field name="name">Beban Amortisasi Lisensi</field>
+    <field name="code">021</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account_type_beban_penyusutan" />
+    <field name="parent_id" ref="account_root" />
+</record>
 </data>
 </openerp>

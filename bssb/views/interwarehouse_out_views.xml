@@ -35,6 +35,7 @@ action = waction
             parent="ati_outgoing_movement_menu"
             name="Pengeluaran Antar Kantor"
             action="interwarehouse_out_server_action"
+            groups="group_pat_user"
         />
 
     </data>

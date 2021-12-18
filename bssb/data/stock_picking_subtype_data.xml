@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<!-- Receipt -->
+<record id="stock_operation_subtype.good_receipt_subtype" model="stock.picking_subtype">
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<function name="write" model="stock.picking.type">
+    <function name="search" model="stock.picking.type">
+        <value eval="[('name','=','Receipts')]" />
+    </function>
+    <value eval="{'subtype_id': ref('stock_operation_subtype.good_receipt_subtype')}" />
+</function>
+
+<!-- Customer Rental In -->
+<record
+            id="stock_rental_operation.customer_in_rental_subtype"
+            model="stock.picking_subtype"
+        >
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+
+<!-- Inter-Warehouse In -->
+<record
+            id="stock_interwarehouse_operation.inter_warehouse_in_subtype"
+            model="stock.picking_subtype"
+        >
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<function name="write" model="stock.picking.type">
+    <function name="search" model="stock.picking.type">
+        <value eval="[('name','=','Inter-Warehouse In')]" />
+    </function>
+    <value
+                eval="{'subtype_id': ref('stock_interwarehouse_operation.inter_warehouse_in_subtype')}"
+            />
+</function>
+
+<!-- Donation In -->
+<record id="stock_donation_operation.donation_in_subtype" model="stock.picking_subtype">
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<!-- Internal Transfer -->
+<record
+            id="stock_operation_subtype.internal_transfer_subtype"
+            model="stock.picking_subtype"
+        >
+    <field name="show_delivery_address_on_picking_form" eval="0" />
+    <field name="show_origin_address_on_picking_form" eval="0" />
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_min_date_on_picking_form" eval="0" />
+    <field name="show_max_date_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<function name="write" model="stock.picking.type">
+    <function name="search" model="stock.picking.type">
+        <value eval="[('name','=','Internal Transfers')]" />
+    </function>
+    <value
+                eval="{'subtype_id': ref('stock_operation_subtype.internal_transfer_subtype')}"
+            />
+</function>
+
+<!-- DOnation Out -->
+<record
+            id="stock_donation_operation.donation_out_subtype"
+            model="stock.picking_subtype"
+        >
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<!-- Stolen -->
+<record id="stock_stolen_operation.stolen_subtype" model="stock.picking_subtype">
+    <field name="show_delivery_address_on_picking_form" eval="0" />
+    <field name="show_origin_address_on_picking_form" eval="0" />
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_min_date_on_picking_form" eval="0" />
+    <field name="show_max_date_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+</record>
+
+<!-- Missing -->
+<record id="stock_missing_operation.missing_subtype" model="stock.picking_subtype">
+    <field name="show_delivery_address_on_picking_form" eval="0" />
+    <field name="show_origin_address_on_picking_form" eval="0" />
+    <field name="show_consignee_on_picking_form" eval="0" />
+    <field name="show_min_date_on_picking_form" eval="0" />
+    <field name="show_max_date_on_picking_form" eval="0" />
+    <field name="show_move_type_on_picking_form" eval="0" />
+    <field name="show_procure_method_on_move_form" eval="0" />
+    <field name="show_invoice_state_on_move_form" eval="0" />
+    <field name="show_location_on_move_form" eval="0" />
+    <field name="show_location_dest_on_move_form" eval="0" />
+</record>
+
+<!-- Delivery Order -->
+<record
+            id="stock_operation_subtype.delivery_order_subtype"
+            model="stock.picking_subtype"
+        >
+  <field name="show_consignee_on_picking_form" eval="0" />
+  <field name="show_move_type_on_picking_form" eval="0" />
+  <field name="show_location_on_move_form" eval="0" />
+  <field name="show_location_dest_on_move_form" eval="0" />
+  <field name="show_procure_method_on_move_form" eval="0" />
+  <field name="show_invoice_state_on_move_form" eval="0" />
+</record>
+
+<function name="write" model="stock.picking.type">
+    <function name="search" model="stock.picking.type">
+        <value eval="[('name','=','Delivery Orders')]" />
+    </function>
+    <value
+                eval="{'subtype_id': ref('stock_operation_subtype.delivery_order_subtype')}"
+            />
+</function>
+
+
+
+
+</data>
+</openerp>

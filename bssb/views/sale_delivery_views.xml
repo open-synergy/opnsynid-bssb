@@ -34,6 +34,7 @@ action = waction
             parent="ati_outgoing_movement_menu"
             name="Jual"
             action="sale_delivery_server_action"
+            groups="group_pat_user"
         />
 
     </data>

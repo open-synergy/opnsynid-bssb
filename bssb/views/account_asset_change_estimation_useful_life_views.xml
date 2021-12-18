@@ -32,6 +32,7 @@ action = waction
             parent="ati_fixed_asset_estimation_change_menu"
             action="account_asset_change_estimation_useful_life_server_action"
             sequence="2"
+            groups="group_pat_user"
         />
 
 </data>

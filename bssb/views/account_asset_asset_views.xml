@@ -56,6 +56,7 @@ action = waction
             name="Aset Tetap"
             action="bssb_account_asset_asset_action"
             sequence="1"
+            groups="group_pat_user"
         />
 
     </data>

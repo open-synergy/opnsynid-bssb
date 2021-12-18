@@ -34,6 +34,7 @@ action = waction
             name="Pemberian Donasi"
             action="donation_out_server_action"
             sequence="2"
+            groups="group_pat_user"
         />
 
     </data>
