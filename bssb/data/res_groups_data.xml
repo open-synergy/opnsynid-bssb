@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<record id="group_all_user" model="res.groups">
+    <field name="name">All User</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+
+<record id="group_no_one" model="res.groups">
+    <field name="name">No One</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+
+<record id="group_pat_user" model="res.groups">
+    <field name="name">Pengelola Aset Tetap (PAT) - Entri</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+
+<record id="group_pat_validator" model="res.groups">
+    <field name="name">Pengelola Aset Tetap (PAT) - Validator</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+
+<record id="group_pat_administrator" model="res.groups">
+    <field name="name">Pengelola Aset Tetap (PAT) - Administrator</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+</data>
+</openerp>

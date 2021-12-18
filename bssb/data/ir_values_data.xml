@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>type</value>
+    <value>product</value>
+ </function>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>cost_method</value>
+    <value>real</value>
+</function>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>check_no_negative</value>
+    <value>0</value>
+</function>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>track_all</value>
+    <value>1</value>
+</function>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>lot_split_type</value>
+    <value>single</value>
+ </function>
+
+<function model="ir.values" name="set_default">
+    <value>product.template</value>
+    <value>auto_capitalization</value>
+    <value>1</value>
+</function>
+</data>
+</openerp>

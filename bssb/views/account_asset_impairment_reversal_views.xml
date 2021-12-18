@@ -29,6 +29,7 @@ action = waction
             parent="ati_fixed_asset_utilization_menu"
             action="account_asset_impairment_reversal_server_action"
             sequence="5"
+            groups="group_pat_user"
         />
 
 

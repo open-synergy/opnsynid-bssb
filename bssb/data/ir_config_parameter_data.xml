@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+
+<record id="parameter_aeroo_docs_enabled" model="ir.config_parameter">
+  <field name="key">aeroo.docs_enabled</field>
+  <field name="value">True</field>
+</record>
+
+<record id="parameter_aeroo_docs_host" model="ir.config_parameter">
+  <field name="key">aeroo.docs_host</field>
+  <field name="value">aeroo-docs</field>
+</record>
+
+<record id="parameter_aeroo_docs_port" model="ir.config_parameter">
+  <field name="key">aeroo.docs_port</field>
+  <field name="value">8989</field>
+</record>
+
+<record id="parameter_aeroo_docs_auth_type" model="ir.config_parameter">
+  <field name="key">aeroo.docs_auth_type</field>
+  <field name="value">simple</field>
+</record>
+
+<record id="parameter_aeroo_docs_username" model="ir.config_parameter">
+  <field name="key">aeroo.docs_username</field>
+  <field name="value">anonymous</field>
+</record>
+
+<record id="parameter_aeroo_docs_password" model="ir.config_parameter">
+  <field name="key">aeroo.docs_password</field>
+  <field name="value">anonymous</field>
+</record>
+</data>
+</openerp>

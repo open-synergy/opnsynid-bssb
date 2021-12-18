@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<record id="super_calendar.super_calendar_menu" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="partner_app.res_partner_root_menu" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="product_app.product_product_root_menu" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="base.menu_base_partner" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="account.menu_finance" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="base.menu_purchase_root" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="stock.menu_stock_root" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="knowledge.menu_document" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="base.menu_reporting" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+<record id="mail.mail_feeds_main" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+
+
+
+</data>
+</openerp>

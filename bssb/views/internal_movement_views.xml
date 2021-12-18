@@ -36,6 +36,7 @@ action = waction
             parent="ati_internal_movement_menu"
             name="Pergerakan Antar Lokasi"
             action="internal_movement_server_action"
+            groups="group_pat_user"
         />
 
     </data>

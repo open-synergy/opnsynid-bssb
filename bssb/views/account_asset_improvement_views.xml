@@ -26,6 +26,7 @@ action = waction
             parent="ati_fixed_asset_utilization_menu"
             action="account_asset_improvement_server_action"
             sequence="1"
+            groups="group_pat_user"
         />
 
 </data>

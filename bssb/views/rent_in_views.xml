@@ -34,6 +34,7 @@ action = waction
             name="Sewa"
             action="rent_in_server_action"
             sequence="2"
+            groups="group_pat_user"
         />
 
     </data>

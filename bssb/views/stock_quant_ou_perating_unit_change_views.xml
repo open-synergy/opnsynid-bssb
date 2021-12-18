@@ -311,6 +311,7 @@
             parent="ati_inventory_menu"
             action="stock_quant_operating_unit_change_action"
             sequence="20"
+            groups="group_pat_user"
         />
 
 </data>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<!-- Default account receivable -->
+<!-- <function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','account'),('name','=','property_account_receivable')]"/>
+  </function>
+  <value eval="{'noupdate': False}"/>
+</function> -->
+
+<record id="property_account_receivable" model="ir.property">
+  <field name="name">property_account_receivable</field>
+  <field
+                name="fields_id"
+                search="[('model','=','res.partner'),('name','=','property_account_receivable')]"
+            />
+  <field name="value_reference" eval="'account.account,'+str(account_014)" />
+  <field name="company_id" ref="base.main_company" />
+</record>
+
+<!-- <function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','account'),('name','=','property_account_receivable')]"/>
+  </function>
+  <value eval="{'noupdate': True}"/>
+</function> -->
+
+<!-- Default account payable -->
+<!-- <function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','account'),('name','=','property_account_payable')]"/>
+  </function>
+  <value eval="{'noupdate': False}"/>
+</function> -->
+
+<!-- <record id="account.property_account_receivable" model="ir.property">
+  <field name="value_reference" eval="'account.account,'+str(account_015)"/>
+</record> -->
+
+<record id="property_account_payable" model="ir.property">
+  <field name="name">property_account_payable</field>
+  <field
+                name="fields_id"
+                search="[('model','=','res.partner'),('name','=','property_account_payable')]"
+            />
+  <field name="value_reference" eval="'account.account,'+str(account_015)" />
+  <field name="company_id" ref="base.main_company" />
+</record>
+<!-- <function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','account'),('name','=','property_account_payable')]"/>
+  </function>
+  <value eval="{'noupdate': True}"/>
+</function> -->
+</data>
+</openerp>

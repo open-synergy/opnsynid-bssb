@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+<function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','base'),('name','=','main_company')]" />
+  </function>
+  <value eval="{'noupdate': False}" />
+</function>
+
+<record id="base.main_company" model="res.company">
+    <field name="name">Bank Sulselbar</field>
+    <field name="currency_id" ref="base.IDR" />
+    <field name="logo" type="base64" file="bssb/img/logo.png" />
+    <field name="street">Jl. Dr. Sam Ratulangi No. 16</field>
+    <field name="city">Makassar</field>
+    <field name="zip">90125</field>
+    <field name="country_id" ref="base.id" />
+    <field name="phone">1500855</field>
+    <field name="fax">(+62411) 854 611</field>
+    <field name="website">https://banksulselbar.co.id</field>
+</record>
+
+<function name="write" model="ir.model.data">
+  <function name="search" model="ir.model.data">
+    <value eval="[('module','=','base'),('name','=','main_company')]" />
+  </function>
+  <value eval="{'noupdate': True}" />
+</function>
+
+</data>
+</openerp>

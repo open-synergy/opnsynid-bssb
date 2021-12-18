@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+  <record id="report_pemindahan_antar_lokasi_a4_pdf" model="ir.actions.report.xml">
+      <field name="name">Penerimaan Pembelian A4 PDF</field>
+      <field name="type">ir.actions.report.xml</field>
+      <field name="model">stock.picking</field>
+      <field name="report_name">report_pemindahan_antar_lokasi_a4_pdf</field>
+      <field name="report_type">aeroo</field>
+      <field name="in_format">oo-odt</field>
+      <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+      <field name="parser_loc">bssb/reports/pemindahan_antar_lokasi.py</field>
+      <field name="report_rml">bssb/reports/pemindahan_antar_lokasi.odt</field>
+      <field name="parser_state">loc</field>
+      <field name="tml_source">file</field>
+  </record>
+
+  <record id="print_policy_pemindahan_antar_lokasi_a4_pdf" model="base.print.policy">
+      <field name="name">Pemindahan Antar Lokasi A4 PDF</field>
+      <field name="report_action_id" ref="report_pemindahan_antar_lokasi_a4_pdf" />
+      <field name="python_condition">result=False
+subtype = env["stock_operation_subtype.internal_transfer_subtype"]
+if record.picking_type_id.subtype_id.id == subtype.id and record.state == 'done':
+    result = True
+      </field>
+  </record>
+</data>
+</openerp>
