@@ -22,8 +22,7 @@
       <field name="name">Penerimaan Sewa A4 PDF</field>
       <field name="report_action_id" ref="report_penerimaan_sewa_a4_pdf" />
       <field name="python_condition">result=False
-subtype = env["stock_rental_operation.customer_in_rental_subtype"]
-if record.picking_type_id.subtype_id.id == subtype.id and record.state == 'done':
+if record.picking_type_id.subtype_id.name == "Customer In Rental Type" and record.state == 'done':
     result = True
       </field>
   </record>

@@ -59,7 +59,7 @@
 
 <menuitem
             id="menu_barang"
-            parent="ati_configuration_menu"
+            parent="ati_configuration_barang"
             name="Barang"
             action="barang_window_action"
             groups="group_pat_administrator"

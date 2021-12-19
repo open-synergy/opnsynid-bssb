@@ -13,11 +13,11 @@
 
 <menuitem
             id="menu_kantor"
-            parent="ati_configuration_menu"
+            parent="ati_configuration_kantor_lokasi"
             name="Kantor"
             action="kantor_action"
             groups="group_pat_administrator"
-            sequence="4"
+            sequence="1"
         />
 
     </data>

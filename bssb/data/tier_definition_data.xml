@@ -14,7 +14,7 @@
 <record id="tier_def_review_fixed_asset" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_fixed_asset" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Capital Improvement -->
@@ -28,7 +28,7 @@
 <record id="tier_def_review_improvement" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_improvement" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Salvage Estimation Change -->
@@ -45,7 +45,7 @@
 <record id="tier_def_review_salvage_change" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_salvage_change" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Usefull Life Estimation Change -->
@@ -62,7 +62,7 @@
 <record id="tier_def_review_life_change" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_life_change" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Impairment -->
@@ -76,7 +76,7 @@
 <record id="tier_def_review_impairment" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_impairment" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Impairment Reversal -->
@@ -93,7 +93,7 @@
 <record id="tier_def_review_impairment_reversal" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_impairment_reversal" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Disposal Donaation -->
@@ -110,7 +110,7 @@
 <record id="tier_def_review_retirement_donation" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_retirement_donation" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Disposal Missing -->
@@ -127,7 +127,7 @@
 <record id="tier_def_review_retirement_missing" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_retirement_missing" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Disposaal Sale -->
@@ -141,7 +141,7 @@
 <record id="tier_def_review_retirement_sale" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_retirement_sale" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Disposal Scrap -->
@@ -155,7 +155,7 @@
 <record id="tier_def_review_retirement_scrap" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_retirement_scrap" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Disposal Stolen -->
@@ -169,7 +169,7 @@
 <record id="tier_def_review_restirement_stolen" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_restirement_stolen" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 
 <!-- Ownership Change -->
@@ -186,7 +186,7 @@
 <record id="tier_def_review_ownership_change" model="tier.definition.review">
     <field name="definition_id" ref="tier_def_ownership_change" />
     <field name="review_type">group</field>
-    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_all_user')])]" />
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('group_pat_validator')])]" />
 </record>
 </data>
 </openerp>

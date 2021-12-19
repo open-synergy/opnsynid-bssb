@@ -41,5 +41,12 @@
     <value>auto_capitalization</value>
     <value>1</value>
 </function>
+
+<function model="ir.values" name="set_default">
+    <value>account.asset_improvement</value>
+    <value>exchange_account_id</value>
+    <value eval="ref('account_022')" />
+</function>
+
 </data>
 </openerp>

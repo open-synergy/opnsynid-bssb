@@ -65,10 +65,10 @@
 <menuitem
             name="Kontak Berbadan Hukum"
             id="kontak_badan_hukum_menu"
-            parent="ati_configuration_menu"
+            parent="ati_configuration_kontak"
             action="kontak_badan_hukum_action"
             groups="group_pat_administrator"
-            sequence="2"
+            sequence="1"
         />
 
 <record id="kontak_individu_action" model="ir.actions.act_window">
@@ -112,7 +112,7 @@
 <menuitem
             name="Kontak Individu"
             id="kontak_individu_menu"
-            parent="ati_configuration_menu"
+            parent="ati_configuration_kontak"
             action="kontak_individu_action"
             groups="group_pat_administrator"
             sequence="2"

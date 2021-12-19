@@ -90,5 +90,40 @@
             parent="ati_main_menu"
         />
 
+    <menuitem
+            id="ati_configuration_barang"
+            name="Barang"
+            sequence="1"
+            parent="ati_configuration_menu"
+        />
+
+    <menuitem
+            id="ati_configuration_aset_tetap"
+            name="Aset Tetap"
+            sequence="2"
+            parent="ati_configuration_menu"
+        />
+
+    <menuitem
+            id="ati_configuration_kantor_lokasi"
+            name="Kantor/Lokasi"
+            sequence="3"
+            parent="ati_configuration_menu"
+        />
+
+    <menuitem
+            id="ati_configuration_kontak"
+            name="Kontak"
+            sequence="4"
+            parent="ati_configuration_menu"
+        />
+
+    <menuitem
+            id="ati_configuration_user_management"
+            name="Pengguna"
+            sequence="5"
+            parent="ati_configuration_menu"
+        />
+
 </data>
 </openerp>

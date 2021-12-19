@@ -1391,5 +1391,21 @@
             />
     </function>
 
+    <function name="write" model="stock.picking.type">
+      <function name="search" model="stock.picking.type">
+          <value eval="[('id','!=',0)]" />
+      </function>
+        <value
+                eval="{
+          'confirm_group_ids': [(6,0,[ref('bssb.group_pat_validator')])],
+          'force_group_ids': [(6,0,[ref('bssb.group_no_one')])],
+          'cancel_group_ids': [(6,0,[ref('bssb.group_pat_validator')])],
+          'unreserve_group_ids': [(6,0,[ref('bssb.group_no_one')])],
+          'split_group_ids': [(6,0,[ref('bssb.group_no_one')])],
+          'back2draft_group_ids': [(6,0,[ref('bssb.group_pat_validator')])],
+          'invoice_group_ids': [(6,0,[ref('bssb.group_no_one')])],
+          }"
+            />
+    </function>
 </data>
 </openerp>

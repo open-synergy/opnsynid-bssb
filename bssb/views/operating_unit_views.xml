@@ -4,18 +4,19 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <openerp>
 <data>
-<record id="lokasi_action" model="ir.actions.act_window">
-      <field name="name">Lokasi/Ruangan</field>
-      <field name="res_model">stock.location</field>
+
+<record id="unit_kerja_window_action" model="ir.actions.act_window">
+      <field name="name">Unit Kerja</field>
+      <field name="res_model">operating.unit</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
 </record>
 
 <menuitem
-            id="menu_lokasi"
-            parent="ati_configuration_kantor_lokasi"
-            name="Lokasi/Kantor"
-            action="lokasi_action"
+            id="menu_unit_kerja"
+            parent="ati_configuration_user_management"
+            name="Unit Kerja"
+            action="unit_kerja_window_action"
             groups="group_pat_administrator"
             sequence="2"
         />

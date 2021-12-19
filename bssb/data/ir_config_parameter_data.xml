@@ -35,5 +35,15 @@
   <field name="key">aeroo.docs_password</field>
   <field name="value">anonymous</field>
 </record>
+
+<record id="parameter_m2x_create" model="ir.config_parameter">
+  <field name="key">web_m2x_options.create</field>
+  <field name="value">False</field>
+</record>
+
+<record id="parameter_m2x_create_edit" model="ir.config_parameter">
+  <field name="key">web_m2x_options.create_edit</field>
+  <field name="value">False</field>
+</record>
 </data>
 </openerp>

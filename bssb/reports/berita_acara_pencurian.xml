@@ -22,8 +22,7 @@
       <field name="name">Berita Acara Pencurian A4 PDF</field>
       <field name="report_action_id" ref="report_berita_acara_pencurian_a4_pdf" />
       <field name="python_condition">result=False
-subtype = env["stock_stolen_operation.stolen_subtype"]
-if record.picking_type_id.subtype_id.id == subtype.id and record.state == 'done':
+if record.picking_type_id.subtype_id.name == "Stolen" and record.state == 'done':
     result = True
       </field>
   </record>

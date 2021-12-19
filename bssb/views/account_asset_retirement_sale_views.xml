@@ -14,7 +14,7 @@
             />
     <field
                 name="code"
-            >waction = env.ref("fixed_asset_retirement_sale.account_asset_retirement_sale_server_action").read()[0]
+            >waction = env.ref("fixed_asset_retirement_sale.account_asset_retirement_sale_action").read()[0]
 waction["domain"] = [
     ("asset_id.operating_unit_id", "in", env.user.operating_unit_ids.ids),
     ]

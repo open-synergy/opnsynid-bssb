@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record
+            id="fixed_asset_retirement_donation.retirement_type_donation"
+            model="account.asset_retirement_type"
+        >
+    <field name="name">Donation</field>
+    <field name="exchange_journal_id" ref="account_journal_disposal_exchange" />
+    <field name="disposal_journal_id" ref="account_journal_disposal" />
+    <field name="gain_journal_id" ref="account_journal_disposal_gain" />
+    <field name="exchange_account_id" ref="account_022" />
+    <field name="gain_account_id" ref="account_023" />
+    <field name="loss_account_id" ref="account_024" />
+    <field
+                name="asset_retirement_cancel_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_retirement_restart_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+</record>
+
+<record
+            id="fixed_asset_retirement_missing.retirement_type_missing"
+            model="account.asset_retirement_type"
+        >
+    <field name="name">Missing</field>
+    <field name="exchange_journal_id" ref="account_journal_disposal_exchange" />
+    <field name="disposal_journal_id" ref="account_journal_disposal" />
+    <field name="gain_journal_id" ref="account_journal_disposal_gain" />
+    <field name="exchange_account_id" ref="account_022" />
+    <field name="gain_account_id" ref="account_023" />
+    <field name="loss_account_id" ref="account_024" />
+    <field
+                name="asset_retirement_cancel_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_retirement_restart_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+</record>
+
+<record
+            id="fixed_asset_retirement_sale.retirement_type_sale"
+            model="account.asset_retirement_type"
+        >
+    <field name="name">Sale</field>
+    <field name="exchange_journal_id" ref="account_journal_disposal_exchange" />
+    <field name="disposal_journal_id" ref="account_journal_disposal" />
+    <field name="gain_journal_id" ref="account_journal_disposal_gain" />
+    <field name="exchange_account_id" ref="account_022" />
+    <field name="gain_account_id" ref="account_023" />
+    <field name="loss_account_id" ref="account_024" />
+    <field
+                name="asset_retirement_cancel_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_retirement_restart_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+</record>
+
+<record
+            id="fixed_asset_retirement_scrap.retirement_type_scrap"
+            model="account.asset_retirement_type"
+        >
+    <field name="name">Scrap</field>
+    <field name="exchange_journal_id" ref="account_journal_disposal_exchange" />
+    <field name="disposal_journal_id" ref="account_journal_disposal" />
+    <field name="gain_journal_id" ref="account_journal_disposal_gain" />
+    <field name="exchange_account_id" ref="account_022" />
+    <field name="gain_account_id" ref="account_023" />
+    <field name="loss_account_id" ref="account_024" />
+    <field
+                name="asset_retirement_cancel_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_retirement_restart_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+</record>
+
+<record
+            id="fixed_asset_retirement_stolen.retirement_type_stolen"
+            model="account.asset_retirement_type"
+        >
+    <field name="name">Stolen</field>
+    <field name="exchange_journal_id" ref="account_journal_disposal_exchange" />
+    <field name="disposal_journal_id" ref="account_journal_disposal" />
+    <field name="gain_journal_id" ref="account_journal_disposal_gain" />
+    <field name="exchange_account_id" ref="account_022" />
+    <field name="gain_account_id" ref="account_023" />
+    <field name="loss_account_id" ref="account_024" />
+    <field
+                name="asset_retirement_cancel_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_retirement_restart_grp_ids"
+                eval="[(6, 0, [ref('group_pat_validator')])]"
+            />
+</record>
+</data>
+</openerp>

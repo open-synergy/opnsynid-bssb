@@ -23,6 +23,63 @@
     <field name="phone">1500855</field>
     <field name="fax">(+62411) 854 611</field>
     <field name="website">https://banksulselbar.co.id</field>
+    <field name="auto_capitalization_limit" eval="5000000.00" />
+    <field
+                name="asset_improvement_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_improvement_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="complex_asset_installation_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="complex_asset_installation_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="complex_asset_removal_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="complex_asset_removal_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_useful_life_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_useful_life_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_salvage_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="asset_salvage_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="fixed_asset_impairment_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="fixed_asset_impairment_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="fixed_asset_impairment_reversal_cancel_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
+    <field
+                name="fixed_asset_impairment_reversal_restart_grp_ids"
+                eval="[(6,0,[ref('group_pat_validator')])]"
+            />
 </record>
 
 <function name="write" model="ir.model.data">

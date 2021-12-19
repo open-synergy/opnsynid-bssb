@@ -186,5 +186,29 @@
     <field name="user_type" ref="account_type_beban_penyusutan" />
     <field name="parent_id" ref="account_root" />
 </record>
+
+<record id="account_022" model="account.account">
+    <field name="name">Exchange Account</field>
+    <field name="code">022</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account.data_account_type_cash" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_023" model="account.account">
+    <field name="name">Fixed Asset Sales Gain</field>
+    <field name="code">023</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account.data_account_type_income" />
+    <field name="parent_id" ref="account_root" />
+</record>
+
+<record id="account_024" model="account.account">
+    <field name="name">Fixed Asset Sales Loss</field>
+    <field name="code">024</field>
+    <field name="type">other</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="parent_id" ref="account_root" />
+</record>
 </data>
 </openerp>

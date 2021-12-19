@@ -5,30 +5,6 @@
      pylint: disable=locally-disabled, file-not-used -->
 <openerp>
 <data>
-<record id="all_user_role" model="res.users.role">
-    <field name="name">All User</field>
-    <field name="group_id" ref="group_all_user" />
-    <field
-                name="implied_ids"
-                eval="[(6,0,[
-      ref('base.group_partner_manager'),
-      ref('base.group_user'),
-      ref('account.group_account_manager'),
-      ref('stock.group_production_lot'),
-      ref('stock.group_locations'),
-      ref('product.group_uom'),
-      ref('base.group_sale_manager'),
-      ref('sql_request_abstract.group_sql_request_manager'),
-      ref('purchase.group_purchase_manager'),
-      ref('stock.group_stock_manager')
-      ])]"
-            />
-</record>
-
-<record id="no_one_role" model="res.users.role">
-    <field name="name">No One</field>
-    <field name="group_id" ref="group_no_one" />
-</record>
 
 <record id="pat_user_role" model="res.users.role">
     <field name="name">Pengelola Aset Tetap (PAT) - Entri</field>
@@ -38,9 +14,6 @@
 <record id="pat_validator_role" model="res.users.role">
     <field name="name">Pengelola Aset Tetap (PAT) - Validator</field>
     <field name="group_id" ref="group_pat_validator" />
-    <field name="implied_ids" eval="[(6,0,[
-      ref('group_pat_user'),
-      ])]" />
 </record>
 
 <record id="pat_admnistrator_role" model="res.users.role">
