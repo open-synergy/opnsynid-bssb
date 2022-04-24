@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="waste_window_action" model="ir.actions.act_window">
+      <field name="name">Waste</field>
+      <field name="res_model">stock.picking</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+</record>
+
+<record id="waste_server_action" model="ir.actions.server">
+    <field name="name">Waste</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="stock.model_stock_picking" />
+    <field name="code">waction = env.ref("bssb.waste_window_action").read()[0]
+subtype_id = env.ref("stock_waste_operation.waste_subtype").id
+waction["domain"] = [
+    ("picking_type_id.subtype_id.id","=", subtype_id),
+    ("operating_unit_id", "in", env.user.operating_unit_ids.ids),
+    ]
+waction["name"] = "Scrap"
+waction["context"] = {"subtype_id": subtype_id, "operating_unit_ids": env.user.operating_unit_ids.ids}
+action = waction
+    </field>
+</record>
+
+<menuitem
+            id="menu_waste"
+            parent="ati_outgoing_movement_menu"
+            name="Scrap"
+            action="waste_server_action"
+            sequence="2"
+            groups="group_pat_user"
+        />
+
+    </data>
+</openerp>

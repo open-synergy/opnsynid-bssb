@@ -16,7 +16,7 @@
             parent="ati_configuration_kantor_lokasi"
             name="Lokasi/Kantor"
             action="lokasi_action"
-            groups="group_pat_administrator"
+            groups="group_pat_user"
             sequence="2"
         />
 

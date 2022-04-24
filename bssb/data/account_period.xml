@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data noupdate="1">
+<!-- First Year -->
+<record id="account_fiscalyear_1" model="account.fiscalyear">
+  <field name="name" eval="time.strftime('%Y')"/>
+  <field name="code" eval="time.strftime('%Y')"/>
+  <field eval="time.strftime('%Y')+'-01-01'" name="date_start"/>
+  <field eval="time.strftime('%Y')+'-12-31'" name="date_stop"/>
+  <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_0" model="account.period">
+    <field eval="'00/'+time.strftime('%Y')" name="code"/>
+    <field eval="'Opening Period '+time.strftime('%Y')" name="name"/>
+    <field eval="True" name="special"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-01-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-01-01'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_1" model="account.period">
+    <field eval="'01/'+time.strftime('%Y')" name="code"/>
+    <field eval="'01/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-01-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-01-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_2" model="account.period">
+    <field eval="'02/'+time.strftime('%Y')" name="code"/>
+    <field eval="'02/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-02-01'" name="date_start"/>
+    <!-- for the last day of February, we have to compute the day before March 1st -->
+    <field eval="(DateTime.today().replace(month=3, day=1) - timedelta(days=1)).strftime('%Y-%m-%d')" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_3" model="account.period">
+    <field eval="'03/'+time.strftime('%Y')" name="code"/>
+    <field eval="'03/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-03-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-03-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_4" model="account.period">
+    <field eval="'04/'+time.strftime('%Y')" name="code"/>
+    <field eval="'04/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-04-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-04-30'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_5" model="account.period">
+    <field eval="'05/'+time.strftime('%Y')" name="code"/>
+    <field eval="'05/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-05-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-05-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_6" model="account.period">
+    <field eval="'06/'+time.strftime('%Y')" name="code"/>
+    <field eval="'06/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-06-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-06-30'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_7" model="account.period">
+    <field eval="'07/'+time.strftime('%Y')" name="code"/>
+    <field eval="'07/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-07-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-07-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_8" model="account.period">
+    <field eval="'08/'+time.strftime('%Y')" name="code"/>
+    <field eval="'08/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-08-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-08-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_9" model="account.period">
+    <field eval="'09/'+time.strftime('%Y')" name="code"/>
+    <field eval="'09/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-09-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-09-30'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_10" model="account.period">
+    <field eval="'10/'+time.strftime('%Y')" name="code"/>
+    <field eval="'10/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-10-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-10-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_11" model="account.period">
+    <field eval="'11/'+time.strftime('%Y')" name="code"/>
+    <field eval="'11/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-11-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-11-30'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_1_12" model="account.period">
+    <field eval="'12/'+time.strftime('%Y')" name="code"/>
+    <field eval="'12/'+time.strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_1"/>
+    <field eval="time.strftime('%Y')+'-12-01'" name="date_start"/>
+    <field eval="time.strftime('%Y')+'-12-31'" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+
+<!-- Second Year -->
+<record id="account_fiscalyear_2" model="account.fiscalyear">
+  <field name="name" eval="(DateTime.today() + relativedelta(years=1)).strftime('%Y')"/>
+  <field name="code" eval="(DateTime.today() + relativedelta(years=1)).strftime('%Y')"/>
+  <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=1,day=1)).strftime('%Y-%m-%d')"/>
+  <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=12,day=31)).strftime('%Y-%m-%d')"/>
+  <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_0" model="account.period">
+    <field eval="'00/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'Opening Period '+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field eval="True" name="special"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_1" model="account.period">
+    <field eval="'01/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'01/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=1,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_2" model="account.period">
+    <field eval="'02/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'02/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=2,day=1)).strftime('%Y-%m-%d')"/>
+    <field eval="(DateTime.today().replace(month=3, day=1) + relativedelta(years=1,days=-1)).strftime('%Y-%m-%d')" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+    <!-- for the last day of February, we have to compute the day before March 1st -->
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_3" model="account.period">
+    <field eval="'03/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'03/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=3,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=3,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_4" model="account.period">
+    <field eval="'04/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'04/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=4,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=4,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_5" model="account.period">
+    <field eval="'05/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'05/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=5,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=5,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_6" model="account.period">
+    <field eval="'06/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'06/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=6,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=6,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_7" model="account.period">
+    <field eval="'07/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'07/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=7,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=7,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_8" model="account.period">
+    <field eval="'08/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'08/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=8,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=8,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_9" model="account.period">
+    <field eval="'09/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'09/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=9,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=9,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_10" model="account.period">
+    <field eval="'10/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'10/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=10,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=10,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_11" model="account.period">
+    <field eval="'11/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'11/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=11,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=11,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_2_12" model="account.period">
+    <field eval="'12/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="code"/>
+    <field eval="'12/'+(DateTime.today() + relativedelta(years=1)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_2"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=1,month=12,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=1,month=12,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+
+<!-- Third Year -->
+<record id="account_fiscalyear_3" model="account.fiscalyear">
+  <field name="name" eval="(DateTime.today() + relativedelta(years=2)).strftime('%Y')"/>
+  <field name="code" eval="(DateTime.today() + relativedelta(years=2)).strftime('%Y')"/>
+  <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=1,day=1)).strftime('%Y-%m-%d')"/>
+  <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=12,day=31)).strftime('%Y-%m-%d')"/>
+  <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_0" model="account.period">
+    <field eval="'00/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'Opening Period '+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field eval="True" name="special"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_1" model="account.period">
+    <field eval="'01/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'01/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=1,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=1,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_2" model="account.period">
+    <field eval="'02/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'02/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=2,day=1)).strftime('%Y-%m-%d')"/>
+    <field eval="(DateTime.today().replace(month=3, day=1) + relativedelta(years=2,days=-1)).strftime('%Y-%m-%d')" name="date_stop"/>
+    <field name="company_id" ref="base.main_company"/>
+    <!-- for the last day of February, we have to compute the day before March 1st -->
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_3" model="account.period">
+    <field eval="'03/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'03/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=3,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=3,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_4" model="account.period">
+    <field eval="'04/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'04/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=4,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=4,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_5" model="account.period">
+    <field eval="'05/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'05/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=5,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=5,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_6" model="account.period">
+    <field eval="'06/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'06/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=6,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=6,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_7" model="account.period">
+    <field eval="'07/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'07/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=7,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=7,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_8" model="account.period">
+    <field eval="'08/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'08/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=8,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=8,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_9" model="account.period">
+    <field eval="'09/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'09/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=9,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=9,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_10" model="account.period">
+    <field eval="'10/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'10/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=10,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=10,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_11" model="account.period">
+    <field eval="'11/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'11/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=11,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=11,day=30)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+<record id="period_3_12" model="account.period">
+    <field eval="'12/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="code"/>
+    <field eval="'12/'+(DateTime.today() + relativedelta(years=2)).strftime('%Y')" name="name"/>
+    <field name="fiscalyear_id" ref="account_fiscalyear_3"/>
+    <field name="date_start" eval="(DateTime.today() + relativedelta(years=2,month=12,day=1)).strftime('%Y-%m-%d')"/>
+    <field name="date_stop" eval="(DateTime.today() + relativedelta(years=2,month=12,day=31)).strftime('%Y-%m-%d')"/>
+    <field name="company_id" ref="base.main_company"/>
+</record>
+</data>
+</openerp>

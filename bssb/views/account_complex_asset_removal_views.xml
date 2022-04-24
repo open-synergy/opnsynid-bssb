@@ -28,7 +28,7 @@ action = waction
             id="account_complex_asset_removal_menu"
             name="Pemisahan"
             parent="ati_fixed_asset_complex_asset_menu"
-            action="account_complex_asset_installation_server_action"
+            action="account_complex_asset_removal_server_action"
             sequence="2"
             groups="group_pat_user"
         />

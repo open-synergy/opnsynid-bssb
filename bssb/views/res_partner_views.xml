@@ -67,7 +67,7 @@
             id="kontak_badan_hukum_menu"
             parent="ati_configuration_kontak"
             action="kontak_badan_hukum_action"
-            groups="group_pat_administrator"
+            groups="group_pat_user"
             sequence="1"
         />
 
@@ -114,7 +114,7 @@
             id="kontak_individu_menu"
             parent="ati_configuration_kontak"
             action="kontak_individu_action"
-            groups="group_pat_administrator"
+            groups="group_pat_user"
             sequence="2"
         />
 

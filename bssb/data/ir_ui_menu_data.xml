@@ -65,6 +65,13 @@
     ])]" />
 </record>
 
+<record id="base.menu_administration" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6,0,[
+    ref('group_no_one')
+    ])]" />
+</record>
+
+
 
 
 

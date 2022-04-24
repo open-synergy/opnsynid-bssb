@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+    <data>
+
+        <menuitem
+            id="base_qr_content_policy_menu"
+            name="QR Code"
+            parent="ati_configuration_user_management"
+            action="base_qr_code.base_qr_content_policy_action"
+            sequence="100" />
+
+    </data>
+</openerp>

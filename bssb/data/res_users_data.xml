@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data noupdate="1">
+
+<record id="admin_ati_user" model="res.users">
+    <field name="name">Admin ATI</field>
+    <field name="login">admin-ati</field>
+    <field name="partner_id" ref="admin_ati_partner"/>
+    <field name="password">@4tq_W%v+X_S7EeN</field>
+</record>
+
+<record id="admin_ati_user_role_1" model="res.users.role.line">
+    <field name="user_id" ref="admin_ati_user"/>
+    <field name="role_id" ref="pat_admnistrator_role"/>
+</record>
+</data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+     pylint: disable=locally-disabled, file-not-used -->
+<openerp>
+<data>
+
+<record id="admin_ati_partner" model="res.partner">
+    <field name="name">Admin ATI</field>
+    <field name="is_company" eval="0"/>
+    <field name="parent_id" ref="base.main_partner"/>
+    <field name="customer" eval="0"/>
+    <field name="supplier" eval="0"/>
+    <field name="email">admin-ati@example.com</field>
+</record>
+</data>
+</openerp>

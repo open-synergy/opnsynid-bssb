@@ -17,7 +17,7 @@
             parent="ati_configuration_aset_tetap"
             name="Kategori Aset"
             action="kategori_aset_window_action"
-            groups="group_pat_administrator"
+            groups="group_pat_user"
             sequence="1"
         />
 

@@ -62,7 +62,7 @@
             parent="ati_configuration_barang"
             name="Barang"
             action="barang_window_action"
-            groups="group_pat_administrator"
+            groups="group_pat_user"
             sequence="1"
         />
 

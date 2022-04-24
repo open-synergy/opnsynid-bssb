@@ -18,6 +18,7 @@
             name="Perolehan Aset Tetap"
             sequence="2"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -25,6 +26,7 @@
             name="Pemakaian Aset Tetap"
             sequence="3"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -32,6 +34,7 @@
             name="Aset Kompleks"
             sequence="2"
             parent="ati_fixed_asset_utilization_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -39,6 +42,7 @@
             name="Perubahan Estimasi"
             sequence="3"
             parent="ati_fixed_asset_utilization_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -46,6 +50,7 @@
             name="Pelepasan Aset Tetap"
             sequence="4"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -53,6 +58,7 @@
             name="Inventaris"
             sequence="5"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -60,6 +66,7 @@
             name="Pergerakan Masuk"
             sequence="6"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -67,6 +74,7 @@
             name="Pergerakan Internal"
             sequence="7"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -74,6 +82,7 @@
             name="Pergerakan Keluar"
             sequence="8"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -81,13 +90,41 @@
             name="Laporan"
             sequence="98"
             parent="ati_main_menu"
+            groups="group_pat_user"
         />
+
+    <menuitem
+                id="menu_account_reportFixedAsset"
+                name="Daftar Aset Tetap"
+                parent="ati_report_menu"
+                action="fixed_asset_aeroo_report.waction_account_wizardFixedAsset"
+                groups="group_pat_user"
+                sequence="1"   />
+
+    <menuitem
+                id="print_stock_balance_menu"
+                name="Daftar ATI"
+                parent="ati_report_menu"
+                action="opnsynid_stock_balance_aeroo_report.print_stock_balance_action"
+                groups="group_pat_user"
+                sequence="2"
+            />
+
+    <menuitem
+                id="print_stock_card_menu"
+                name="Histori ATI"
+                parent="ati_report_menu"
+                action="opnsynid_stock_card_aeroo_report.print_stock_card_action"
+                groups="group_pat_user"
+                sequence="3"
+            />
 
     <menuitem
             id="ati_configuration_menu"
             name="Pengaturan"
             sequence="99"
             parent="ati_main_menu"
+            groups="group_pat_user,group_pat_administrator"
         />
 
     <menuitem
@@ -95,6 +132,7 @@
             name="Barang"
             sequence="1"
             parent="ati_configuration_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -102,6 +140,7 @@
             name="Aset Tetap"
             sequence="2"
             parent="ati_configuration_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -109,6 +148,7 @@
             name="Kantor/Lokasi"
             sequence="3"
             parent="ati_configuration_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -116,6 +156,7 @@
             name="Kontak"
             sequence="4"
             parent="ati_configuration_menu"
+            groups="group_pat_user"
         />
 
     <menuitem
@@ -123,6 +164,7 @@
             name="Pengguna"
             sequence="5"
             parent="ati_configuration_menu"
+            groups="group_pat_administrator"
         />
 
 </data>
