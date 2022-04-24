@@ -13,5 +13,6 @@
 #
 # To provide both the URL and a branch, use:
 operating-unit https://github.com/open-synergy/operating-unit.git 8.0-dev
+server-tools https://github.com/oca/server-tools.git 8.0
 opnsynid-fixed-asset https://github.com/open-synergy/opnsynid-fixed-asset.git 8.0
 opnsynid-stock-logistics-warehouse https://github.com/open-synergy/opnsynid-stock-logistics-warehouse.git 8.0
