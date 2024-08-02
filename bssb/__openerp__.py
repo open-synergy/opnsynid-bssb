@@ -56,7 +56,6 @@
         "fixed_asset_qrcode",
         "stock_quant_qrcode",
         "fixed_asset_aeroo_report",
-        "opnsynid_stock_balance_aeroo_report",
     ],
     "data": [
         "data/res_groups_data.xml",
