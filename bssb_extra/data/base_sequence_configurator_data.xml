@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 OpenSynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+    <data>
+        <record
+            id="bssb.base_sequence_stock_quant_operating_unit_change"
+            model="base.sequence_configurator_line"
+        >
+            <field name="sequence_computation_code">result = True</field>
+        </record>
+    </data>
+</openerp>

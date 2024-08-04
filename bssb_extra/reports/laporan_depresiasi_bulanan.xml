@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Opensynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="laporan_depresiasi_bulanan_view_search" model="ir.ui.view">
+    <field name="name">laporan_depresiasi_bulanan.search</field>
+    <field name="model">laporan_depresiasi_bulanan</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="asset_id"/>
+            <field name="operating_unit_id"/>
+            <field name="category_id"/>
+            <field name="account_asset_id" />
+            <field name="account_depreciation_id" />
+            <field name="account_expense_depreciation_id" />
+            <field name="account_plus_value_id" />
+            <field name="account_min_value_id" />
+            <field name="account_residual_value_id" />
+            <filter name="dom_empty" string="Empty" domain="[('id','=',0)]"/>
+            <group name="row_grp" string="Row Grouping">
+                <filter name="row_grp_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                <filter name="row_grp_operating_unit" string="Operating Unit" context="{'group_by':'operating_unit_id'}"/>
+                <filter name="row_grp_category" string="Category" context="{'group_by':'category_id'}"/>
+                <filter name="row_grp_account_asset" string="Asset Account" context="{'group_by':'account_asset_id'}"/>
+                <filter name="row_grp_account_depreciation" string="Depreciation Account" context="{'group_by':'account_depreciation_id'}"/>
+                <filter name="row_grp_account_expense_depreciation" string="Depr. Expense Account" context="{'group_by':'account_expense_depreciation_id'}"/>
+                <filter name="row_grp_account_plus_value" string="Plus-Value Account" context="{'group_by':'account_plus_value_id'}"/>
+                <filter name="row_grp_account_min_value" string="Min-Value Account" context="{'group_by':'account_min_value_id'}"/>
+                <filter name="row_grp_account_residual_value" string="Residual Value Account" context="{'group_by':'account_residual_value_id'}"/>
+                <filter name="row_grp_date_year" string="Date by Year" context="{'group_by':'date:year'}"/>
+                <filter name="row_grp_date_month" string="Date by Month" context="{'group_by':'date:month'}"/>
+            </group>
+            <group name="col_grp" string="Col Grouping">
+                <filter name="col_grp_asset" string="Asset" context="{'col_group_by':'asset_id'}"/>
+                <filter name="col_grp_operating_unit" string="Operating Unit" context="{'col_group_by':'operating_unit_id'}"/>
+                <filter name="col_grp_category" string="Category" context="{'col_group_by':'category_id'}"/>
+                <filter name="col_grp_account_asset" string="Asset Account" context="{'col_group_by':'account_asset_id'}"/>
+                <filter name="col_grp_account_depreciation" string="Depreciation Account" context="{'col_group_by':'account_depreciation_id'}"/>
+                <filter name="col_grp_account_expense_depreciation" string="Depr. Expense Account" context="{'col_group_by':'account_expense_depreciation_id'}"/>
+                <filter name="col_grp_account_plus_value" string="Plus-Value Account" context="{'col_group_by':'account_plus_value_id'}"/>
+                <filter name="col_grp_account_min_value" string="Min-Value Account" context="{'col_group_by':'account_min_value_id'}"/>
+                <filter name="col_grp_account_residual_value" string="Residual Value Account" context="{'col_group_by':'account_residual_value_id'}"/>
+                <filter name="col_grp_date_year" string="Date by Year" context="{'col_group_by':'date:year'}"/>
+                <filter name="col_grp_date_month" string="Date by Month" context="{'col_group_by':'date:month'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="laporan_depresiasi_bulanan_view_graph" model="ir.ui.view">
+    <field name="name">laporan_depresiasi_bulanan.graph</field>
+    <field name="model">laporan_depresiasi_bulanan</field>
+    <field name="arch" type="xml">
+        <graph type="pivot">
+            <field name="amount" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="laporan_depresiasi_bulanan_view_tree" model="ir.ui.view">
+    <field name="name">laporan_depresiasi_bulanan.tree</field>
+    <field name="model">laporan_depresiasi_bulanan</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="asset_id"/>
+            <field name="operating_unit_id"/>
+            <field name="category_id"/>
+            <field name="amount"/>
+            <field name="account_asset_id" />
+            <field name="account_depreciation_id" />
+            <field name="account_expense_depreciation_id" />
+            <field name="account_plus_value_id" />
+            <field name="account_min_value_id" />
+            <field name="account_residual_value_id" />
+        </tree>
+    </field>
+</record>
+
+<record id="laporan_depresiasi_bulanan_action" model="ir.actions.act_window">
+    <field name="name">Laporan Depresiasi Bulanan</field>
+    <field name="res_model">laporan_depresiasi_bulanan</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">graph,tree</field>
+    <field name="context">{'search_default_dom_empty':1}</field>
+    <field name="view_id" ref="laporan_depresiasi_bulanan_view_graph"/>
+    <field name="search_view_id" ref="laporan_depresiasi_bulanan_view_search"/>
+</record>
+
+
+<menuitem
+    id="laporan_depresiasi_bulanan_menu"
+    name="Laporan Depresiasi Bulanan"
+    parent="bssb.ati_report_menu"
+    action="laporan_depresiasi_bulanan_action"
+    groups="bssb.group_pat_user"
+    sequence="10" />
+
+</data>
+</openerp>
