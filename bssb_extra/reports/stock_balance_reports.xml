@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--    Copyright 2024 OpenSynergy Indonesia
+        Copyright 2024 PT. Simetri Sinergi Indonesia
+        License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record id="opnsynid_stock_balance_aeroo_report.stock_balance_ods_report" model="ir.actions.report.xml">
+            <field
+                name="parser_loc"
+            >bssb_extra/reports/stock_balance.py</field>
+        </record>
+        <record id="opnsynid_stock_balance_aeroo_report.stock_balance_xls_report" model="ir.actions.report.xml">
+            <field
+                name="parser_loc"
+            >bssb_extra/reports/stock_balance.py</field>
+        </record>
+    </data>
+</openerp>

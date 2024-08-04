@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2024 OpenSynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+    <menuitem
+                id="bssb.print_stock_balance_menu"
+                name="Daftar Inventaris"
+                parent="bssb.ati_report_menu"
+                action="opnsynid_stock_balance_aeroo_report.print_stock_balance_action"
+                groups="bssb.group_pat_user"
+                sequence="2"
+            />
+    </data>
+</openerp>
