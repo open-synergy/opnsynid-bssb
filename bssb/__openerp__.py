@@ -36,7 +36,6 @@
         "stock_missing_operation",
         "stock_waste_operation",
         "stock_production_lot_by_product",
-        "fixed_asset_stock",
         "super_calendar",
         "partner_app",
         "product_app",
