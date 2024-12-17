@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 OpenSynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+    <data>
+        <record
+            id="sequence_configurator_cb_asset_batch"
+            model="base.sequence_configurator"
+        >
+            <field name="model_id" ref="bssb_core_banking_asset.model_cb_asset_batch" />
+            <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','cb_asset_batch'),('name','=','name')]"
+            />
+            <field
+                name="fallback_sequence_id"
+                ref="bssb_core_banking_asset.sequence_cb_asset_batch"
+            />
+        </record>
+
+        <record
+            id="sequence_configurator_line_cb_asset_batch"
+            model="base.sequence_configurator_line"
+        >
+            <field
+                name="generator_id"
+                ref="sequence_configurator_cb_asset_batch"
+            />
+            <field name="sequence" eval="1" />
+            <field
+                name="sequence_computation_code"
+            >result = env.user.company_id.cb_asset_batch_sequence_id</field>
+        </record>
+    </data>
+</openerp>

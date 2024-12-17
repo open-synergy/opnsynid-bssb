@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Copyright 2024 OpenSynergy Indonesia-->
+<!--Copyright 2024 PT. Simetri Sinergi Indonesia-->
+<!--License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).-->
+<openerp>
+    <data>
+
+        <record id="cb_asset_backend_view_search" model="ir.ui.view">
+            <field name="name">cb_asset_backend - Search</field>
+            <field name="model">cb_asset_backend</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" />
+                    <field name="name" />
+                    <field name="code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="cb_asset_backend_view_tree" model="ir.ui.view">
+            <field name="name">cb_asset_backend - Tree</field>
+            <field name="model">cb_asset_backend</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" optional="hide" />
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="active" widget="boolean_toggle" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="cb_asset_backend_view_form" model="ir.ui.view">
+            <field name="name">cb_asset_backend - Form</field>
+            <field name="model">cb_asset_backend</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button
+                                name="action_running"
+                                string="Running"
+                                type="object"
+                                attrs="{'invisible':[('state','=','running')]}"
+                            />
+                        <button
+                                name="action_restart"
+                                string="Restart"
+                                type="object"
+                                attrs="{'invisible':[('state','!=','running')]}"
+                            />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div name="div_smart_buttons" class="oe_button_box" />
+                        <group name="header" colspan="4" col="2">
+                            <group name="header_left">
+                                <field name="name" />
+                                <field name="code" />
+                                <field name="company_id" groups="base.group_multi_company" />
+                                <field name="active" widget="boolean_toggle" />
+                            </group>
+                            <group name="header_right">
+                                <field name="base_url" />
+                                <field name="api_endpoint" />
+                                <field name="api_token" />
+                                <field name="username" />
+                                <field name="password" password="True"/>
+                                <field name="token"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="note" string="Note">
+                                <field name="note" colspan="4" nolabel="1" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cb_asset_backend_action" model="ir.actions.act_window">
+            <field name="name">Core Banking Asset Backends</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cb_asset_backend</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="cb_asset_backend_menu"
+                name="Backends"
+                parent="bssb_core_banking_asset_configuration_menu"
+                groups="base.group_system"
+                action="cb_asset_backend_action"
+                sequence="1"
+            />
+    </data>
+</openerp>

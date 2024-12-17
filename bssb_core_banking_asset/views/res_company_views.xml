@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Copyright 2024 OpenSynergy Indonesia-->
+<!--Copyright 2024 PT. Simetri Sinergi Indonesia-->
+<!--License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).-->
+<openerp>
+    <data>
+        <record id="res_company_view_form" model="ir.ui.view">
+            <field name="name">res.company - Core Banking Asset Form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form//notebook" position="inside">
+                        <page name="cb_asset" string="Core Banking Asset Batch">
+                            <group name="cb_asset_1" colspan="4" col="2">
+                                <group name="fcb_asset_1_1" colspan="1" col="2">
+                                    <field name="cb_asset_backend_id" />
+                                    <field name="cb_asset_batch_sequence_id" />
+                                </group>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>
