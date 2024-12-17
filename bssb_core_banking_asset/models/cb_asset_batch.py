@@ -320,9 +320,9 @@ class CoreBankingAssetBatch(models.Model):
                 "POST", url, headers=headers, data=payload
             )
             result = response.json()
-            code = response["code"]
+            code = result["code"]
             if code == "00":
-                backend.token = response["message"]
+                backend.token = result["message"]
             msg_err = _(
                 """
             Status: Success
