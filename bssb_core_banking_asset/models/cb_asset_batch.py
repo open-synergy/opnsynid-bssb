@@ -440,7 +440,6 @@ class CoreBankingAssetBatch(models.Model):
     @api.multi
     def action_send(self):
         for document in self:
-            data = self._prepare_data_core_banking()
-            raise UserError(_("%s")%(data))
             if document._get_token():
+                data = self._prepare_data_core_banking()
                 document._send_2_core_banking(data)
