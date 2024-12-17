@@ -307,20 +307,22 @@ class CoreBankingAssetBatch(models.Model):
 
         url = backend.base_url + backend.api_token
 
-        params = {
-            "user": backend.username,
-            "password": backend.password
-        }
+        payload = json.dumps({
+            "user": "ati-umum",
+            "password": "ati-umum"
+        })
         headers = {
             "Content-Type": "application/json",
         }
 
         try:
             response = requests.request(
-                "POST", url, headers=headers, params=params
+                "POST", url, headers=headers, data=payload
             )
-            backend.token = result["token"]
-            self.action_done()
+            result = response.json()
+            code = response["code"]
+            if code == "00":
+                backend.token = response["message"]
             msg_err = _(
                 """
             Status: Success
@@ -390,7 +392,7 @@ class CoreBankingAssetBatch(models.Model):
             response = requests.request(
                 "POST", url, headers=headers, data=payload
             )
-            # self.action_done()
+            self.action_done()
             msg_err = _(
                 """
             Status: Success
