@@ -13,12 +13,7 @@ class ResCompany(models.Model):
         domain="[('state', '=', 'running')]",
     )
 
-    @api.model
-    def _get_cb_asset_batch_sequence_id(self):
-        return self.env.ref("bssb_core_banking_asset.sequence_cb_asset_batch") or False
-
     cb_asset_batch_sequence_id = fields.Many2one(
         string="Sequence",
         comodel_name="ir.sequence",
-        default=lambda self: self._get_cb_asset_batch_sequence_id(),
     )
