@@ -307,19 +307,17 @@ class CoreBankingAssetBatch(models.Model):
 
         url = backend.base_url + backend.api_token
 
-        payload = json.dumps(
-            {
-                "user": backend.username,
-                "pass": backend.password,
-            }
-        )
+        params = {
+            "user": backend.username,
+            "password": backend.password
+        }
         headers = {
             "Content-Type": "application/json",
         }
 
         try:
             response = requests.request(
-                "GET", url, headers=headers, data=payload
+                "POST", url, headers=headers, params=params
             )
             backend.token = result["token"]
             self.action_done()
