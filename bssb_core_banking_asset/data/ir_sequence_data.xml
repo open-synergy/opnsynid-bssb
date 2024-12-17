@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2024 OpenSynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_cb_asset_batch" model="ir.sequence.type">
+    <field name="name">Core Banking Asset Batch</field>
+    <field name="code">cb_asset_batch</field>
+</record>
+
+</data>
+
+<data noupdate="1">
+<record id="sequence_cb_asset_batch" model="ir.sequence">
+    <field name="name">Core Banking Asset Batch</field>
+    <field name="code">cb_asset_batch</field>
+    <field name="padding">5</field>
+    <field name="prefix">CB-ASSET/%(year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+</record>
+</data>
+</openerp>
