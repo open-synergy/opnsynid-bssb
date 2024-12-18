@@ -270,8 +270,7 @@ class CoreBankingAssetBatch(models.Model):
 
     @api.multi
     def _prepare_data_core_banking(self):
-        company = self.env.user.company_id
-        backend = company.cb_asset_backend_id
+        backend = self.cb_asset_backend_id
         data = {
             "APP_ID": backend.app_id,
             "NO_TRANS": self.name,
@@ -298,8 +297,7 @@ class CoreBankingAssetBatch(models.Model):
     @api.multi
     def _get_token(self):
         self.ensure_one()
-        company = self.env.user.company_id
-        backend = company.cb_asset_backend_id
+        backend = self.cb_asset_backend_id
 
         if not backend:
             msg_err = _("Backend Not Found")
@@ -381,8 +379,7 @@ class CoreBankingAssetBatch(models.Model):
     @api.multi
     def _send_2_core_banking(self, data):
         self.ensure_one()
-        company = self.env.user.company_id
-        backend = company.cb_asset_backend_id
+        backend = self.cb_asset_backend_id
 
         if not backend:
             msg_err = _("Backend Not Found")
