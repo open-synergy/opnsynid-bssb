@@ -272,16 +272,18 @@ class CoreBankingAssetBatch(models.Model):
 
     @api.multi
     def _prepare_data_core_banking(self):
+        company = self.env.user.company_id
+        backend = company.cb_asset_backend_id
         data = {
-            "APP_ID": "ATI-UMUM",
+            "APP_ID": backend.app_id,
             "NO_TRANS": self.name,
             "REK_DEBET": self.warehouse_id.code + self.depreciation_expense_account_id.code,
             "NOMINAL_DEBET": self.final_depreciation_amount,
             "KET_DEBET": self.description,
             "NOTLP_DEBET": "",
-            "JENIS_TRANS": ""
+            "JENIS_TRANS": "0200",
         }
-
+        # Range nanti diganti sama line_ids
         for i in range(1,4):
             rek_kredit = "REK_KREDIT" + str(i)
             nominal_kredit = "NOMINAL_KREDIT" + str(i)
@@ -308,8 +310,8 @@ class CoreBankingAssetBatch(models.Model):
         url = backend.base_url + backend.api_token
 
         payload = json.dumps({
-            "user": "ati-umum",
-            "password": "ati-umum"
+            "user": backend.username,
+            "password": backend.password,
         })
         headers = {
             "Content-Type": "application/json",
@@ -323,16 +325,27 @@ class CoreBankingAssetBatch(models.Model):
             code = result["code"]
             if code == "00":
                 backend.token = result["message"]
-            msg_err = _(
+                msg_err = _(
+                    """
+                Status: Success
+                API: %s
+                Payload: %s
+                Response: %s
                 """
-            Status: Success
-            API: %s
-            Payload: %s
-            Response: %s
-            """
-                % (url, payload, response.text)
-            )
-            return self._set_response("success", msg_err)
+                    % (url, payload, response.text)
+                )
+                return self._set_response("success", msg_err)
+            else:
+                msg_err = _(
+                    """
+                Status: Error
+                API: %s
+                Payload: %s
+                Response: %s
+                """
+                    % (url, payload, response.text)
+                )
+                return self._set_response("failed", msg_err)
         except requests.exceptions.Timeout as e:
             msg_err = _(
                 """
@@ -385,24 +398,33 @@ class CoreBankingAssetBatch(models.Model):
         headers = {
             "Authorization": "Bearer " + backend.token,
         }
-
-        payload = json.dumps(data)
-
         try:
             response = requests.request(
-                "POST", url, headers=headers, data=payload
+                "POST", url, headers=headers, json=data
             )
-            self.action_done()
-            msg_err = _(
+            if response.status_code == 200:
+                self.action_done()
+                msg_err = _(
+                    """
+                Status: Success
+                API: %s
+                Payload: %s
+                Response: %s
                 """
-            Status: Success
-            API: %s
-            Payload: %s
-            Response: %s
-            """
-                % (url, payload, response.text)
-            )
-            return self._set_response("success", msg_err)
+                    % (url, payload, response.text)
+                )
+                return self._set_response("success", msg_err)
+            else:
+                msg_err = _(
+                    """
+                Status: Error
+                API: %s
+                Payload: %s
+                Response: %s
+                """
+                    % (url, payload, response.text)
+                )
+                return self._set_response("success", msg_err)                
         except requests.exceptions.Timeout as e:
             msg_err = _(
                 """

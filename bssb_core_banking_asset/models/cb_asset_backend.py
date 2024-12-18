@@ -70,8 +70,11 @@ class CoreBankingAssetBackend(models.Model):
         string="Password",
         required=True,
     )
-    token = fields.Char(
+    token = fields.Text(
         string="Token",
+    )
+    app_id = fields.Char(
+        string="App ID",
     )
 
     @api.multi
