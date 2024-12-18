@@ -109,30 +109,28 @@ class CoreBankingAssetBatch(models.Model):
         compute_sudo=True,
     )
 
+    manual_depreciation_amount = fields.Float(
+        string="Manual Depreciation Amount",
+        readonly=True,
+        required=True,
+        states={
+            "draft": [("readonly", False)],
+        },
+    )
+
     @api.multi
     @api.depends(
         "depreciation_amount_method",
-    )
-    def _compute_manual_depreciation_amount(self):
-        for document in self:
-            result = 0.0
-            document.manual_depreciation_amount = result
-
-    manual_depreciation_amount = fields.Float(
-        string="Manual Depreciation Amount",
-        compute="_compute_manual_depreciation_amount",
-        store=True,
-        compute_sudo=True,
-    )
-
-    @api.multi
-    @api.depends(
         "automatic_depreciation_amount",
         "manual_depreciation_amount",
     )
     def _compute_final_depreciation_amount(self):
         for document in self:
             result = 0.0
+            if document.depreciation_amount_method == "manual":
+                result = document.manual_depreciation_amount
+            else:
+                result = document.automatic_depreciation_amount
             document.final_depreciation_amount = result
 
     final_depreciation_amount = fields.Float(
@@ -408,10 +406,10 @@ class CoreBankingAssetBatch(models.Model):
                     """
                 Status: Success
                 API: %s
-                Payload: %s
+                Data: %s
                 Response: %s
                 """
-                    % (url, payload, response.text)
+                    % (url, data, response.text)
                 )
                 return self._set_response("success", msg_err)
             else:
@@ -419,10 +417,10 @@ class CoreBankingAssetBatch(models.Model):
                     """
                 Status: Error
                 API: %s
-                Payload: %s
+                Data: %s
                 Response: %s
                 """
-                    % (url, payload, response.text)
+                    % (url, data, response.text)
                 )
                 return self._set_response("success", msg_err)                
         except requests.exceptions.Timeout as e:
@@ -430,10 +428,10 @@ class CoreBankingAssetBatch(models.Model):
                 """
             Status: Timeout
             API: %s
-            Payload: %s
+            Data: %s
             Message Error: %s
             """
-                % (url, payload, e)
+                % (url, data, e)
             )
             return self._set_response("failed", msg_err)
         except requests.exceptions.ConnectionError as e:
@@ -441,10 +439,10 @@ class CoreBankingAssetBatch(models.Model):
                 """
             Status: ConnectionError
             API: %s
-            Payload: %s
+            Data: %s
             Message Error: %s
             """
-                % (url, payload, e)
+                % (url, data, e)
             )
             return self._set_response("failed", msg_err)
         except ValueError as e:
@@ -452,10 +450,10 @@ class CoreBankingAssetBatch(models.Model):
                 """
             Status: ValueError
             API: %s
-            Payload: %s
+            Data: %s
             Massage Error: %s
             """
-                % (url, payload, e)
+                % (url, data, e)
             )
             return self._set_response("failed", msg_err)
 
