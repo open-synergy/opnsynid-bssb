@@ -279,19 +279,11 @@ class CoreBankingAssetBatch(models.Model):
             "KET_DEBET": self.description,
             "NOTLP_DEBET": "",
             "JENIS_TRANS": "0200",
+            "REK_KREDIT1": self.warehouse_id.code + self.depreciation_account_id.code,
+            "NOMINAL_KREDIT1": self.final_depreciation_amount,
+            "KET_KREDIT1": self.description,
+            "NOTLP_KREDIT1": "",
         }
-        # Range nanti diganti sama line_ids
-        for i in range(1,4):
-            rek_kredit = "REK_KREDIT" + str(i)
-            nominal_kredit = "NOMINAL_KREDIT" + str(i)
-            ket_kredit = "KET_KREDIT" + str(i)
-            notlp_kredit = "NOTLP_KREDIT" + str(i)
-            data[rek_kredit] = self.warehouse_id.code + self.depreciation_account_id.code
-            data[nominal_kredit] = self.final_depreciation_amount
-            data[ket_kredit] = self.description
-            data[notlp_kredit] = ""
-            i+=1
-
         return data
     
     @api.multi
