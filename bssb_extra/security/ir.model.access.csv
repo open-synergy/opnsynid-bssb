@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"fixed_asset_accounting_category_all_access","fixed_asset_accounting_category - All Users","model_fixed_asset_accounting_category","base.group_user",1,0,0,0
+"fixed_asset_accounting_category_admin_access","fixed_asset_accounting_category - Admin","model_fixed_asset_accounting_category","base.group_system",1,1,1,1
+"fixed_asset_accounting_category_ati_admin_access","fixed_asset_accounting_category - ATI Admin","model_fixed_asset_accounting_category","bssb.group_pat_administrator",1,1,1,1

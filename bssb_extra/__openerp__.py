@@ -16,10 +16,13 @@
         "opnsynid_stock_card_aeroo_report",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "menu.xml",
         "data/base_sequence_configurator_data.xml",
         "views/account_asset_asset_views.xml",
         "views/account_asset_asset_qr_views.xml",
+        "views/fixed_asset_accounting_category_views.xml",
+        "views/account_asset_category.xml",
         "reports/laporan_depresiasi_bulanan.xml",
         "reports/stock_balance_reports.xml",
         "reports/stock_card_reports.xml",

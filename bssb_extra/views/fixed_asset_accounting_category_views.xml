@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="fixed_asset_accounting_category_view_form" model="ir.ui.view">
+    <field name="name">fixed_asset_accounting_category - form</field>
+    <field name="model">fixed_asset_accounting_category</field>
+    <field name="arch" type="xml">
+        <form string="Asset category">
+            <header />
+            <sheet>
+                <div
+                    class="oe_right oe_button_box"
+                    style="width: 300px;"
+                    name="buttons"
+                />
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="name" />
+                        <field name="active" />
+                        <field name="code" />
+                    </group>
+                </group>
+                <notebook>
+                    <page name="accounting" string="Accounting">
+                        <group name="accounting_1" colspan="4" col="2">
+                            <field name="account_asset_id" />
+                            <field name="account_depreciation_id" />
+                            <field name="account_expense_depreciation_id" />
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="fixed_asset_accounting_category_view_tree" model="ir.ui.view">
+        <field name="name">fixed_asset_accounting_category - tree</field>
+        <field name="model">fixed_asset_accounting_category</field>
+        <field name="arch" type="xml">
+            <tree string="Asset category">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="account_asset_id" />
+                    <field name="account_depreciation_id" />
+                    <field name="account_expense_depreciation_id" />
+            </tree>
+        </field>
+</record>
+
+<record id="fixed_asset_accounting_category_view_search" model="ir.ui.view">
+        <field name="name">fixed_asset_accounting_category - search</field>
+        <field name="model">fixed_asset_accounting_category</field>
+        <field name="arch" type="xml">
+            <search string="Search Asset Category">
+                    <field name="name"/>
+            </search>
+        </field>
+</record>
+
+<record id="account_asset_category_action" model="ir.actions.act_window">
+        <field name="name">Kategori Akuntansi</field>
+        <field name="res_model">fixed_asset_accounting_category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="menu_account_asset_category"
+    string="Kategori Akuntansi"
+    parent="bssb.ati_configuration_aset_tetap"
+    action="account_asset_category_action"
+/>
+
+</data>
+</openerp>

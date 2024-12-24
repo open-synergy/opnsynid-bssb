@@ -7,4 +7,7 @@ from . import (
     account_asset_asset,
     account_asset_depreciation_line,
     stock_quant_ou_perating_unit_change,
+    fixed_asset_accounting_category,
+    account_asset_category,
+    stock_quant,
 )

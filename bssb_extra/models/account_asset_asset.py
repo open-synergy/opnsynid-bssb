@@ -3,7 +3,7 @@
 # Copyright 2024 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class AccountAssetAsset(models.Model):
@@ -51,3 +51,15 @@ class AccountAssetAsset(models.Model):
         readonly=True,
         store=True,
     )
+    accounting_category_id = fields.Many2one(
+        string="Accounting Category",
+        comodel_name="fixed_asset_accounting_category",
+    )  
+
+    @api.onchange(
+        "category_id"
+    )  
+    def onchange_accounting_category_id(self):
+        self.accounting_category_id = False
+        if self.category_id:
+            self.accounting_category_id = self.category_id.accounting_category_id
