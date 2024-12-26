@@ -21,7 +21,9 @@
         "data/base_sequence_configurator_data.xml",
         "views/cb_asset_backend_views.xml",
         "views/res_company_views.xml",
+        "views/operating_unit_views.xml",
         "views/cb_asset_batch_views.xml",
+        "views/cb_group_views.xml",
     ],
     "demo": [
     ],

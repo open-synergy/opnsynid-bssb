@@ -57,15 +57,24 @@ class CoreBankingAssetBatch(models.Model):
         },
         default=datetime.now().strftime("%Y-%m-%d"),
     )
-    warehouse_id = fields.Many2one(
-        string="Warehouse",
-        comodel_name="stock.warehouse",
+    cb_group_id = fields.Many2one(
+        string="Core Bankking Group",
+        comodel_name="cb_group",
         readonly=True,
         required=True,
         states={
             "draft": [("readonly", False)],
         },
     )
+    accounting_category_id = fields.Many2one(
+        string="Accounting Category",
+        comodel_name="fixed_asset_accounting_category",
+        readonly=True,
+        required=True,
+        states={
+            "draft": [("readonly", False)],
+        },
+    )    
     depreciation_account_id = fields.Many2one(
         string="Depreciation Account",
         comodel_name="account.account",
@@ -93,13 +102,30 @@ class CoreBankingAssetBatch(models.Model):
         default="manual",
     )
 
+    depreciation_line_ids = fields.Many2many(
+        string="Depreciation Lines",
+        comodel_name="account.asset.depreciation.line",
+        rel="rel_asset_batch_2_depr_line",
+        col1="batch_id",
+        col2="line_id",
+        required=False,
+        states={
+            "draft": [("readonly", False)],
+        },        
+    )
+
+
     @api.multi
     @api.depends(
         "depreciation_amount_method",
+        "depreciation_line_ids",
+        "depreciation_line_ids.amount",
     )
     def _compute_automatic_depreciation_amount(self):
         for document in self:
             result = 0.0
+            for line in document.depreciation_line_ids:
+                result += line.amount
             document.automatic_depreciation_amount = result
 
     automatic_depreciation_amount = fields.Float(
@@ -142,7 +168,7 @@ class CoreBankingAssetBatch(models.Model):
     description = fields.Text(
         string="Description",
         readonly=True,
-        required=True,
+        required=False,
         states={
             "draft": [("readonly", False)],
         },
@@ -158,6 +184,23 @@ class CoreBankingAssetBatch(models.Model):
         default="draft",
         copy=False,
     )
+
+    @api.onchange(
+        "accounting_category_id"
+    )
+    def onchange_depreciation_account_id(self):
+        self.depreciation_account_id = False
+        if self.accounting_category_id:
+            self.depreciation_account_id = self.accounting_category_id.account_depreciation_id
+
+    @api.onchange(
+        "accounting_category_id"
+    )
+    def onchange_depreciation_expense_account_id(self):
+        self.depreciation_expense_account_id = False
+        if self.accounting_category_id:
+            self.depreciation_expense_account_id = self.accounting_category_id.account_expense_depreciation_id
+
 
     @api.model
     def _get_cb_asset_backend_id(self):
@@ -198,6 +241,7 @@ class CoreBankingAssetBatch(models.Model):
                 if record.date_start > record.date_end:
                     msg_err = _("Date Start cannot be greater than Date End")
                     raise UserError(msg_err)
+
                 
     @api.multi
     def _set_response(self, resp_type, response_msg):
@@ -269,17 +313,42 @@ class CoreBankingAssetBatch(models.Model):
             document.write(document._prepare_done_data())
 
     @api.multi
+    def action_load_depreciation_line(self):
+        for document in self:
+            document._load_depreciation_line()
+
+    @api.multi
+    def _load_depreciation_line(self):
+        self.ensure_one()
+        Line = self.env["account.asset.depreciation.line"]
+        criteria = [
+            ("type", "=", "depreciate"),
+            ("subtype_id", "=", False),
+            ("move_check", "=", False),
+            ("init_entry", "=", False),
+            ("line_date", ">=", self.date_start),
+            ("line_date", "<=", self.date_end),
+            ("asset_id.state", "=", "open"),
+            ("asset_id.operating_unit_id.cb_group_id", "=", self.cb_group_id.id),
+        ]
+        lines = Line.search(criteria)
+        # raise UserError(str(lines))
+        self.write({
+            "depreciation_line_ids": [(6, 0, lines.ids)]
+        })
+
+    @api.multi
     def _prepare_data_core_banking(self):
         backend = self.cb_asset_backend_id
         data = {
             "APP_ID": backend.app_id,
             "NO_TRANS": self.name,
-            "REK_DEBET": self.warehouse_id.code + self.depreciation_expense_account_id.code,
+            "REK_DEBET": self.cb_group_id.code + self.depreciation_expense_account_id.code,
             "NOMINAL_DEBET": self.final_depreciation_amount,
             "KET_DEBET": self.description,
             "NOTLP_DEBET": "",
             "JENIS_TRANS": "0200",
-            "REK_KREDIT1": self.warehouse_id.code + self.depreciation_account_id.code,
+            "REK_KREDIT1": self.cb_group_id.code + self.depreciation_account_id.code,
             "NOMINAL_KREDIT1": self.final_depreciation_amount,
             "KET_KREDIT1": self.description,
             "NOTLP_KREDIT1": "",

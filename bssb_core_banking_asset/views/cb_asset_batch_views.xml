@@ -22,8 +22,13 @@
             <field name="model">cb_asset_batch</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="id" optional="hide" />
+                    <field name="id"/>
                     <field name="name" />
+                    <field name="cb_group_id" />
+                    <field name="accounting_category_id" />
+                    <field name="date"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
                     <field name="state" />
                 </tree>
             </field>
@@ -76,7 +81,8 @@
                         <group name="header" colspan="4" col="2">
                             <group name="header_left">
                                 <field name="name" />
-                                <field name="warehouse_id" />
+                                <field name="cb_group_id" />
+                                <field name="accounting_category_id" />
                                 <field name="depreciation_account_id" />
                                 <field name="depreciation_expense_account_id" />
                             </group>
@@ -96,6 +102,16 @@
                                     <field name="manual_depreciation_amount" />
                                     <field name="final_depreciation_amount" />
                                 </group>
+                                <button name="action_load_depreciation_line" type="object" string="Load" help="Load depreciation line with matching criteria"/>
+                                <field name="depreciation_line_ids">
+                                    <tree>
+                                        <field name="asset_id"/>
+                                        <field name="line_date"/>
+                                        <field name="asset_value"/>
+                                        <field name="amount"/>
+                                        <field name="remaining_value"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page name="description" string="Description">
                                 <field name="description" colspan="4" nolabel="1" />
@@ -118,7 +134,7 @@
         </record>
 
         <record id="cb_asset_batch_action" model="ir.actions.act_window">
-            <field name="name">Asset Batches</field>
+            <field name="name">Core Banking Depreciation</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">cb_asset_batch</field>
             <field name="view_type">form</field>
@@ -127,8 +143,8 @@
 
         <menuitem
             id="cb_asset_batch_menu"
-            name="Asset Batches"
-            parent="fixed_asset.menu_finance_assets"
+            name="Core Banking Depreciation"
+            parent="bssb.ati_fixed_asset_menu"
             action="cb_asset_batch_action"
             sequence="30"
         />
