@@ -117,7 +117,6 @@ class CoreBankingAssetBatch(models.Model):
 
     @api.multi
     @api.depends(
-        "depreciation_amount_method",
         "depreciation_line_ids",
         "depreciation_line_ids.amount",
     )
