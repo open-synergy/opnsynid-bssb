@@ -469,6 +469,7 @@ class CoreBankingAssetBatch(models.Model):
                 """
                     % (url, data, response.text)
                 )
+                self.depreciation_line_ids.action_mark_as_init()
                 return self._set_response("success", msg_err)
             else:
                 msg_err = _(
