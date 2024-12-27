@@ -329,6 +329,7 @@ class CoreBankingAssetBatch(models.Model):
             ("line_date", "<=", self.date_end),
             ("asset_id.state", "=", "open"),
             ("asset_id.operating_unit_id.cb_group_id", "=", self.cb_group_id.id),
+            ("asset_id.accounting_category_id.id", "=", self.accounting_category_id.id),
         ]
         lines = Line.search(criteria)
         # raise UserError(str(lines))
