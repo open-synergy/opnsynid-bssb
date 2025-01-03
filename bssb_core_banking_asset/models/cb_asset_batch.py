@@ -480,7 +480,7 @@ class CoreBankingAssetBatch(models.Model):
                     else:
                         msg_err = _(
                             """
-                        Status: Error
+                        Status: Error status code
                         API: %s
                         Data: %s
                         Response: %s
@@ -491,7 +491,7 @@ class CoreBankingAssetBatch(models.Model):
                 except:
                     msg_err = _(
                         """
-                    Status: Error
+                    Status: Error parsing status code
                     API: %s
                     Data: %s
                     Response: %s
