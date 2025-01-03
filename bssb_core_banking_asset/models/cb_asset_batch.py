@@ -348,7 +348,7 @@ class CoreBankingAssetBatch(models.Model):
             "NO_TRANS": self.name,
             "REK_DEBET": rek_debit,
             "NOMINAL_DEBET": self.final_depreciation_amount,
-            "KET_DEBET": description
+            "KET_DEBET": description,
             "NOTLP_DEBET": "",
             "JENIS_TRANS": "0200",
             "REK_KREDIT1": rek_credit,
