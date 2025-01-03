@@ -496,7 +496,7 @@ class CoreBankingAssetBatch(models.Model):
                     Data: %s
                     Response: %s
                     """
-                        % (url, data, response.text)
+                        % (url, data, (response.text + " " + success_code))
                     )
                     return self._set_response("success", msg_err)                     
             else:
