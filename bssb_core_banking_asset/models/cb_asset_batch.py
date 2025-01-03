@@ -340,15 +340,18 @@ class CoreBankingAssetBatch(models.Model):
     @api.multi
     def _prepare_data_core_banking(self):
         backend = self.cb_asset_backend_id
+        rek_debit = self.cb_group_id.code + self.depreciation_expense_account_id.code.replace(".","")
+        rek_credit = self.cb_group_id.code + self.depreciation_account_id.code.replace(".","")
+        description = "Penyusutan aset %s S.D. %s" % (self.date_start, self.date_end)
         data = {
             "APP_ID": backend.app_id,
             "NO_TRANS": self.name,
-            "REK_DEBET": self.cb_group_id.code + self.depreciation_expense_account_id.code,
+            "REK_DEBET": rek_debit,
             "NOMINAL_DEBET": self.final_depreciation_amount,
-            "KET_DEBET": self.description,
+            "KET_DEBET": description
             "NOTLP_DEBET": "",
             "JENIS_TRANS": "0200",
-            "REK_KREDIT1": self.cb_group_id.code + self.depreciation_account_id.code,
+            "REK_KREDIT1": rek_credit,
             "NOMINAL_KREDIT1": self.final_depreciation_amount,
             "KET_KREDIT1": self.description,
             "NOTLP_KREDIT1": "",
@@ -459,18 +462,43 @@ class CoreBankingAssetBatch(models.Model):
                 "POST", url, headers=headers, json=data
             )
             if response.status_code == 200:
-                self.action_done()
-                msg_err = _(
+                try:
+                    success_code = response.text[0:2]
+                    if success_code == "00":
+                        self.action_done()
+                        msg_err = _(
+                            """
+                        Status: Success
+                        API: %s
+                        Data: %s
+                        Response: %s
+                        """
+                            % (url, data, response.text)
+                        )
+                        self.depreciation_line_ids.action_mark_as_init()
+                        return self._set_response("success", msg_err)
+                    else:
+                        msg_err = _(
+                            """
+                        Status: Error
+                        API: %s
+                        Data: %s
+                        Response: %s
+                        """
+                            % (url, data, response.text)
+                        )
+                        return self._set_response("success", msg_err)                         
+                except:
+                    msg_err = _(
+                        """
+                    Status: Error
+                    API: %s
+                    Data: %s
+                    Response: %s
                     """
-                Status: Success
-                API: %s
-                Data: %s
-                Response: %s
-                """
-                    % (url, data, response.text)
-                )
-                self.depreciation_line_ids.action_mark_as_init()
-                return self._set_response("success", msg_err)
+                        % (url, data, response.text)
+                    )
+                    return self._set_response("success", msg_err)                     
             else:
                 msg_err = _(
                     """
