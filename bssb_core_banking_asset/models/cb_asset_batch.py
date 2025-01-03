@@ -463,7 +463,7 @@ class CoreBankingAssetBatch(models.Model):
             )
             if response.status_code == 200:
                 try:
-                    success_code = response.text[0:2]
+                    success_code = response.text[1:3]
                     if success_code == "00":
                         self.action_done()
                         msg_err = _(
