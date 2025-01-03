@@ -353,7 +353,7 @@ class CoreBankingAssetBatch(models.Model):
             "JENIS_TRANS": "0200",
             "REK_KREDIT1": rek_credit,
             "NOMINAL_KREDIT1": self.final_depreciation_amount,
-            "KET_KREDIT1": self.description,
+            "KET_KREDIT1": description,
             "NOTLP_KREDIT1": "",
         }
         return data
@@ -485,7 +485,7 @@ class CoreBankingAssetBatch(models.Model):
                         Data: %s
                         Response: %s
                         """
-                            % (url, data, response.text)
+                            % (url, data, (response.text + " status code " + success_code))
                         )
                         return self._set_response("success", msg_err)                         
                 except:
