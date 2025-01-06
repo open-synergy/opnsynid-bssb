@@ -416,7 +416,8 @@ class CoreBankingAssetBatch(models.Model):
         "accounting_category_id",
     )
     def onchange_depreciation_line_ids(self):
-        self.depreciation_line_ids.unlink()
+        if self.depreciation_line_ids:
+            self.write({'depreciation_line_ids': [(5, 0, 0)]})
 
     @api.multi
     def _load_depreciation_line(self):
