@@ -6,6 +6,7 @@ import json
 import os
 import tempfile
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 import requests
 from openerp import _, api, fields, models
@@ -16,9 +17,14 @@ class CoreBankingAssetBatch(models.Model):
     _name = "cb_asset_batch"
     _inherit = [
         "mail.thread",
+        "tier.validation",
+        "base.workflow_policy_object",
         "base.sequence_document",
     ]
     _description = "Core Banking Asset Batch"
+
+    _state_from = ["draft", "confirm"]
+    _state_to = ["open"]
 
     name = fields.Char(
         string="# Batch",
@@ -57,11 +63,17 @@ class CoreBankingAssetBatch(models.Model):
         },
         default=datetime.now().strftime("%Y-%m-%d"),
     )
+
+    @api.model
+    def _domain_cb_group_id(self):
+        return [('operating_unit_ids', 'in', self.env.user.operating_unit_ids.ids)]
+    
     cb_group_id = fields.Many2one(
-        string="Core Bankking Group",
+        string="Core Banking Group",
         comodel_name="cb_group",
         readonly=True,
         required=True,
+        domain=_domain_cb_group_id,
         states={
             "draft": [("readonly", False)],
         },
@@ -113,7 +125,6 @@ class CoreBankingAssetBatch(models.Model):
             "draft": [("readonly", False)],
         },        
     )
-
 
     @api.multi
     @api.depends(
@@ -177,11 +188,35 @@ class CoreBankingAssetBatch(models.Model):
         selection=[
             ("draft", "Draft"),
             ("confirm", "Confirm"),
+            ("open", "In Progress"),
             ("done", "Done"),
             ("cancel", "Cancel"),
         ],
         default="draft",
         copy=False,
+    )
+
+    @api.multi
+    def _compute_policy(self):
+        _super = super(CoreBankingAssetBatch, self)
+        _super._compute_policy()
+
+    # Policy Field
+    confirm_ok = fields.Boolean(
+        string="Can Confirm",
+        compute="_compute_policy",
+    )
+    send_ok = fields.Boolean(
+        string="Can Send",
+        compute="_compute_policy",
+    )
+    cancel_ok = fields.Boolean(
+        string="Can Cancel",
+        compute="_compute_policy",
+    )
+    restart_ok = fields.Boolean(
+        string="Can Restart",
+        compute="_compute_policy",
     )
 
     @api.onchange(
@@ -199,6 +234,16 @@ class CoreBankingAssetBatch(models.Model):
         self.depreciation_expense_account_id = False
         if self.accounting_category_id:
             self.depreciation_expense_account_id = self.accounting_category_id.account_expense_depreciation_id
+
+    @api.onchange(
+        "date_start",
+        "date_end",
+    )
+    def onchange_description(self):
+        result = ""
+        if self.date_start and self.date_end:
+            result = "Penyusutan aset %s S.D. %s" % (self.date_start, self.date_end)
+        self.description = result
 
 
     @api.model
@@ -240,8 +285,23 @@ class CoreBankingAssetBatch(models.Model):
                 if record.date_start > record.date_end:
                     msg_err = _("Date Start cannot be greater than Date End")
                     raise UserError(msg_err)
-
                 
+    @api.constrains(
+        "date",
+        "date_end",
+    )
+    def _check_periode_date_end(self):
+        for record in self:
+            if record.date and record.date_end:
+                cb_date = datetime.strptime(self.date, "%Y-%m-%d")
+                cb_date += relativedelta(day=1)
+                check_date = cb_date + relativedelta(
+                    months=1, days=-1
+                )
+                if record.date_end > check_date.strftime("%Y-%m-%d"):
+                    msg_err = _("Date End cannot be greater than %s") % (check_date.strftime("%d-%m-%Y"))
+                    raise UserError(msg_err)
+
     @api.multi
     def _set_response(self, resp_type, response_msg):
         self.ensure_one()
@@ -253,7 +313,14 @@ class CoreBankingAssetBatch(models.Model):
         if resp_type == "failed":
             return False
         else:
-            return True    
+            return True   
+
+    @api.multi
+    def _prepare_open_data(self):
+        self.ensure_one()
+        return {
+            "state": "open",
+        } 
                 
     @api.multi
     def _prepare_cancel_data(self):
@@ -285,12 +352,33 @@ class CoreBankingAssetBatch(models.Model):
         }
 
     @api.multi
+    def _prepare_open_data(self):
+        self.ensure_one()
+        return {
+            "state": "open",
+        }
+
+    @api.multi
     def _prepare_done_data(self):
         self.ensure_one()
         return {
             "state": "done",
         }
-                
+    
+
+    @api.multi
+    def validate_tier(self):
+        _super = super(CoreBankingAssetBatch, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_open()
+
+    @api.multi
+    def action_open(self):
+        for document in self:
+            document.write(document._prepare_open_data())
+
     @api.multi
     def action_cancel(self):
         for document in self:
@@ -305,6 +393,7 @@ class CoreBankingAssetBatch(models.Model):
     def action_confirm(self):
         for document in self:
             document.write(document._prepare_confirm_data())
+            document.request_validation()
 
     @api.multi
     def action_done(self):
@@ -342,13 +431,12 @@ class CoreBankingAssetBatch(models.Model):
         backend = self.cb_asset_backend_id
         rek_debit = self.cb_group_id.code + self.depreciation_expense_account_id.code.replace(".","")
         rek_credit = self.cb_group_id.code + self.depreciation_account_id.code.replace(".","")
-        description = "Penyusutan aset %s S.D. %s" % (self.date_start, self.date_end)
         data = {
             "APP_ID": backend.app_id,
             "NO_TRANS": self.name,
             "REK_DEBET": rek_debit,
             "NOMINAL_DEBET": self.final_depreciation_amount,
-            "KET_DEBET": description,
+            "KET_DEBET": self.description,
             "NOTLP_DEBET": "",
             "JENIS_TRANS": "0200",
             "REK_KREDIT1": rek_credit,

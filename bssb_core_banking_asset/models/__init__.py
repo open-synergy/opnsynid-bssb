@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from . import (
+    tier_definition,
     cb_asset_backend,
     operating_unit,
     res_company,

@@ -16,9 +16,12 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "security/cb_asset_batch_security.xml",
         "menu.xml",
+        "data/base_workflow_policy_data.xml",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
+        "data/tier_definition_data.xml",
         "views/cb_asset_backend_views.xml",
         "views/res_company_views.xml",
         "views/operating_unit_views.xml",

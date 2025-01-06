@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 OpenSynergy Indonesia
+     Copyright 2024 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="group_cb_asset_batch_user" model="res.groups">
+    <field name="name">Core Banking Depreciation - All User</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+</record>
+<record id="group_cb_asset_batch_entri" model="res.groups">
+    <field name="name">Core Banking Depreciation - Entri</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+    <field name="implied_ids" eval="[(6,0,[
+      ref('group_cb_asset_batch_user'),
+      ])]" />
+</record>
+
+<record id="group_cb_asset_batch_validator" model="res.groups">
+    <field name="name">Core Banking Depreciation - Validator</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+    <field name="implied_ids" eval="[(6,0,[
+      ref('group_cb_asset_batch_entri'),
+      ])]" />
+</record>
+
+<record id="group_cb_asset_batch_administrator" model="res.groups">
+    <field name="name">Core Banking Depreciation - Administrator</field>
+    <field name="category_id" ref="base_user_role.ir_module_category_role" />
+    <field name="implied_ids" eval="[(6,0,[
+      ref('base.group_system'),ref('group_cb_asset_batch_user')
+      ])]" />
+</record>
+
+</data>
+</openerp>
+
