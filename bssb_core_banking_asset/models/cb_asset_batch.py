@@ -397,6 +397,7 @@ class CoreBankingAssetBatch(models.Model):
     def action_confirm(self):
         for document in self:
             document.write(document._prepare_confirm_data())
+            document._load_depreciation_line()
             document.request_validation()
 
     @api.multi
@@ -408,16 +409,6 @@ class CoreBankingAssetBatch(models.Model):
     def action_load_depreciation_line(self):
         for document in self:
             document._load_depreciation_line()
-
-    @api.onchange(
-        "date_start",
-        "date_end",
-        "cb_group_id",
-        "accounting_category_id",
-    )
-    def onchange_depreciation_line_ids(self):
-        if self.depreciation_line_ids:
-            self.write({'depreciation_line_ids': [(5, 0, 0)]})
 
     @api.multi
     def _load_depreciation_line(self):
