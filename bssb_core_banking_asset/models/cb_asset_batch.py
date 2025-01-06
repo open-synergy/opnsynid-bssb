@@ -409,6 +409,15 @@ class CoreBankingAssetBatch(models.Model):
         for document in self:
             document._load_depreciation_line()
 
+    @api.onchange(
+        "date_start",
+        "date_end",
+        "cb_group_id",
+        "accounting_category_id",
+    )
+    def onchange_depreciation_line_ids(self):
+        self.depreciation_line_ids.unlink()
+
     @api.multi
     def _load_depreciation_line(self):
         self.ensure_one()

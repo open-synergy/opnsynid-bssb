@@ -158,7 +158,13 @@
                                     <field name="manual_depreciation_amount" />
                                     <field name="final_depreciation_amount" />
                                 </group>
-                                <button name="action_load_depreciation_line" type="object" string="Load" help="Load depreciation line with matching criteria"/>
+                                <button
+                                    name="action_load_depreciation_line"
+                                    type="object"
+                                    string="Load"
+                                    help="Load depreciation line with matching criteria"
+                                    attrs="{'invisible': [('state', '!=', 'draft')]}"
+                                />
                                 <field name="depreciation_line_ids">
                                     <tree>
                                         <field name="asset_id"/>
