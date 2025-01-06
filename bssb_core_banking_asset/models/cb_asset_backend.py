@@ -150,7 +150,7 @@ class CoreBankingAssetBackend(models.Model):
             result = response.json()
             code = result["code"]
             if code == "00":
-                backend.token = result["message"]
+                self.token = result["message"]
                 msg_err = _(
                     """
                 Status: Success
