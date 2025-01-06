@@ -59,5 +59,21 @@
                 name="python_code"
             >result = document.cb_group_id.cb_asset_restart_group_ids.ids</field>
         </record>
+        <record
+            id="base_workflow_line_cb_asset_batch_restart_validation"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="base_workflow_cb_asset_batch"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','cb_asset_batch'),('name','=','restart_validation_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.cb_group_id.cb_asset_restart_validation_group_ids.ids</field>
+        </record>
     </data>
 </openerp>

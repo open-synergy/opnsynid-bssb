@@ -218,6 +218,10 @@ class CoreBankingAssetBatch(models.Model):
         string="Can Restart",
         compute="_compute_policy",
     )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
+    )
 
     @api.onchange(
         "accounting_category_id"

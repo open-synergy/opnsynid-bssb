@@ -41,6 +41,18 @@
                 <form>
                     <header>
                         <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            type="object"
+                        />
+                        <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_validation_ok','=',False)]}"
+                            type="object"
+                        /> 
+                        <button
                             name="action_confirm"
                             type="object"
                             string="Confirm"
@@ -176,6 +188,7 @@
                                     <field name="send_ok" />
                                     <field name="cancel_ok" />
                                     <field name="restart_ok" />
+                                    <field name="restart_validation_ok" />
                                 </group>
                             </page>
                             <page name="response" string="Response">

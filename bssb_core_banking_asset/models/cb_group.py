@@ -58,3 +58,10 @@ class CoreBankingGroup(models.Model):
         column1="cb_group_id",
         column2="group_id",
     )
+    cb_asset_restart_validation_group_ids = fields.Many2many(
+        string="Allowed to Restart Validation",
+        comodel_name="res.groups",
+        relation="rel_cb_group_2_group_restart_validation",
+        column1="cb_group_id",
+        column2="group_id",
+    )
