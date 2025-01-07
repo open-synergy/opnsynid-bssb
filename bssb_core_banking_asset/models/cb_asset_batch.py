@@ -111,7 +111,7 @@ class CoreBankingAssetBatch(models.Model):
             ("manual", "Manual"),
             ("automatic", "Automatic"),
         ],
-        default="manual",
+        default="automatic",
     )
 
     depreciation_line_ids = fields.Many2many(
