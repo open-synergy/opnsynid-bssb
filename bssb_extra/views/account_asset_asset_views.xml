@@ -18,9 +18,22 @@
             </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
                 <field name="account_asset_id" />
-            </xpath>
+            </xpath>          
         </field>
     </record>
+
+    <record id="account_asset_asset_view_search" model="ir.ui.view">
+        <field name="name">Inherit : Account Asset Accounting Search</field>
+        <field name="model">account.asset.asset</field>
+        <field name="inherit_id" ref="fixed_asset.account_asset_asset_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[2]" position="inside">
+                <filter name="grp_accounting_category_id" string="Accounting Category" context="{'group_by':'accounting_category_id'}"/>
+            </xpath>  
+        </field>
+    </record>    
+
+    
 
     <record id="account_asset_asset_view_form" model="ir.ui.view">
         <field name="name">Inherit : Account Asset Accounting Form</field>
