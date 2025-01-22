@@ -582,7 +582,7 @@ class CoreBankingAssetBatch(models.Model):
                         """
                             % (url, data, (response.text + " status code " + success_code))
                         )
-                        return self._set_response("success", msg_err, response.text)                         
+                        return self._set_response("failed", msg_err, response.text)                         
                 except:
                     msg_err = _(
                         """
@@ -593,7 +593,7 @@ class CoreBankingAssetBatch(models.Model):
                     """
                         % (url, data, (response.text + " " + success_code))
                     )
-                    return self._set_response("success", msg_err, response.text)                     
+                    return self._set_response("failed", msg_err, response.text)                     
             else:
                 msg_err = _(
                     """
@@ -604,7 +604,7 @@ class CoreBankingAssetBatch(models.Model):
                 """
                     % (url, data, response.text)
                 )
-                return self._set_response("success", msg_err, response.text)                
+                return self._set_response("failed", msg_err, response.text)                
         except requests.exceptions.Timeout as e:
             msg_err = _(
                 """
