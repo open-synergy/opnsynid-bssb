@@ -29,6 +29,7 @@
         <field name="arch" type="xml">
             <xpath expr="//group[2]" position="inside">
                 <filter name="grp_accounting_category_id" string="Accounting Category" context="{'group_by':'accounting_category_id'}"/>
+                <filter name="grp_account_asset_id" string="Asset Account" context="{'group_by':'account_asset_id'}"/>
             </xpath>  
         </field>
     </record>    
