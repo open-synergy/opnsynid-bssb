@@ -65,3 +65,7 @@ class CoreBankingGroup(models.Model):
         column1="cb_group_id",
         column2="group_id",
     )
+    cb_asset_batch_sequence_id = fields.Many2one(
+        string="Sequence",
+        comodel_name="ir.sequence",
+    )

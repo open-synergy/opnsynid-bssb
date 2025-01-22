@@ -21,6 +21,7 @@
                         <field name="name" />
                         <field name="active" />
                         <field name="code" />
+                        <field name="cb_asset_batch_sequence_id" />
                     </group>
                 </group>
                 <notebook>

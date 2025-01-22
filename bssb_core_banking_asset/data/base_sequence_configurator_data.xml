@@ -29,8 +29,14 @@
             />
             <field name="sequence" eval="1" />
             <field
+                name="domain"
+            >if document.cb_group_id.cb_asset_batch_sequence_id:
+    result = True
+else:
+    result = False</field>
+            <field
                 name="sequence_computation_code"
-            >result = env.user.company_id.cb_asset_batch_sequence_id</field>
+            >result = document.cb_group_id.cb_asset_batch_sequence_id</field>
         </record>
     </data>
 </openerp>
