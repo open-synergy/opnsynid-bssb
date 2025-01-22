@@ -307,15 +307,17 @@ class CoreBankingAssetBatch(models.Model):
                     raise UserError(msg_err)
 
     @api.multi
-    def _set_response(self, resp_type, response_msg):
+    def _set_response(self, resp_type, response_msg, response):
         self.ensure_one()
         self.write(
             {
                 "response_msg": response_msg,
             }
         )
+        self.env.cr.commit()
         if resp_type == "failed":
-            return False
+            msg_err = _("%s") % (response)
+            raise UserError(msg_err)
         else:
             return True   
 
@@ -458,7 +460,7 @@ class CoreBankingAssetBatch(models.Model):
 
         if not backend:
             msg_err = _("Backend Not Found")
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, msg_err)
 
         url = backend.base_url + backend.api_token
 
@@ -487,7 +489,7 @@ class CoreBankingAssetBatch(models.Model):
                 """
                     % (url, payload, response.text)
                 )
-                return self._set_response("success", msg_err)
+                return self._set_response("success", msg_err, response.text)
             else:
                 msg_err = _(
                     """
@@ -498,7 +500,7 @@ class CoreBankingAssetBatch(models.Model):
                 """
                     % (url, payload, response.text)
                 )
-                return self._set_response("failed", msg_err)
+                return self._set_response("failed", msg_err, response.text)
         except requests.exceptions.Timeout as e:
             msg_err = _(
                 """
@@ -509,7 +511,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, payload, e)
             )
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, e)
         except requests.exceptions.ConnectionError as e:
             msg_err = _(
                 """
@@ -520,7 +522,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, payload, e)
             )
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, e)
         except ValueError as e:
             msg_err = _(
                 """
@@ -531,7 +533,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, payload, e)
             )
-            return self._set_response("failed", msg_err)            
+            return self._set_response("failed", msg_err, e)            
     
     @api.multi
     def _send_2_core_banking(self, data):
@@ -540,10 +542,10 @@ class CoreBankingAssetBatch(models.Model):
 
         if not backend:
             msg_err = _("Backend Not Found")
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, msg_err)
         if not backend.token:
             msg_err = _("Token Not Found")
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, msg_err)
 
         url = backend.base_url + backend.api_endpoint
 
@@ -569,7 +571,7 @@ class CoreBankingAssetBatch(models.Model):
                             % (url, data, response.text)
                         )
                         self.depreciation_line_ids.action_mark_as_init()
-                        return self._set_response("success", msg_err)
+                        return self._set_response("success", msg_err, response.text)
                     else:
                         msg_err = _(
                             """
@@ -580,7 +582,7 @@ class CoreBankingAssetBatch(models.Model):
                         """
                             % (url, data, (response.text + " status code " + success_code))
                         )
-                        return self._set_response("success", msg_err)                         
+                        return self._set_response("success", msg_err, response.text)                         
                 except:
                     msg_err = _(
                         """
@@ -591,7 +593,7 @@ class CoreBankingAssetBatch(models.Model):
                     """
                         % (url, data, (response.text + " " + success_code))
                     )
-                    return self._set_response("success", msg_err)                     
+                    return self._set_response("success", msg_err, response.text)                     
             else:
                 msg_err = _(
                     """
@@ -602,7 +604,7 @@ class CoreBankingAssetBatch(models.Model):
                 """
                     % (url, data, response.text)
                 )
-                return self._set_response("success", msg_err)                
+                return self._set_response("success", msg_err, response.text)                
         except requests.exceptions.Timeout as e:
             msg_err = _(
                 """
@@ -613,7 +615,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, data, e)
             )
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, e)
         except requests.exceptions.ConnectionError as e:
             msg_err = _(
                 """
@@ -624,7 +626,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, data, e)
             )
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, e)
         except ValueError as e:
             msg_err = _(
                 """
@@ -635,7 +637,7 @@ class CoreBankingAssetBatch(models.Model):
             """
                 % (url, data, e)
             )
-            return self._set_response("failed", msg_err)
+            return self._set_response("failed", msg_err, e)
 
     @api.multi
     def action_send(self):
